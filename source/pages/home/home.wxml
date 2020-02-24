@@ -1,1 +1,24 @@
-<!-- home -->
+
+
+<cu-custom bgColor="bg-4b" >
+   <view class="flex-row flex-center bg-4b " slot="content">
+ <view class="flex-1"></view>
+  <view class="flex-row flex-center cc" bindtap='qiehuan'>
+    <view class="txt-white h5">{{currentcity.name}}</view>
+    <image src="{{uploadpath}}resource/{{res.cityxaila}}" class="icon-15 margin-top-5"></image>
+  </view>
+  <view class="flex-1"></view>
+  <view class="inp flex-row flex-center">
+    <image src='{{uploadpath}}resource/{{res.sousuo}}' class="icon margin-left-15 margin-right-10"></image>
+    <input type="text" ></input>
+  </view>
+  <view class="flex-1"></view>
+</view>
+	<!-- <view slot="content">活动</view> -->
+</cu-custom>
+
+<view class="xiala" wx:if='{{showcity==true}}'>
+  <view bindtap="switchcity" data-current="{{item}}" id='{{idx}}' wx:for='{{citylist}}' wx:key='k' wx:for-index='idx' class="borb {{seq==idx?'cactive':''}}">{{item.name}}</view>
+</view>
+ <view class="bg-4b" style='height:300rpx'></view>
+<custom-tab-bar></custom-tab-bar>

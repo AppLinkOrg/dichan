@@ -1,0 +1,5 @@
+<!--pages/activity/activity.wxml-->
+<text>pages/activity/activity.wxml</text>
+
+
+<custom-tab-bar></custom-tab-bar>

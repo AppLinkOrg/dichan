@@ -1,0 +1,160 @@
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.flex-row {
+  display: flex;
+}
+.clear-button{ 
+  padding: 0rpx;
+  font-size: unset;
+  text-align: unset;
+  line-height: unset;
+  background-color: transparent;
+  border: 0rpx red solid;
+  border-color:red;
+}
+.clear-button::after {
+  border: 0;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-1 {
+  flex: 1;
+}
+
+.flex-center {
+  align-content: center;
+  align-items: center;
+}
+.tanchu{
+
+width: 100vw;
+height: 478rpx;
+position: fixed;
+bottom: 0;
+background: #fff;
+
+}
+.tab-bar-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.tab-bar-list {
+  display: flex;
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0 0;
+}
+
+.tab-bar-item-custom {
+  position: relative;
+}
+
+.tab-bar-item-icon {
+  position: relative;
+  margin: 0 auto;
+  width: 27px;
+  height: 27px;
+}
+
+.tab-bar-item-icon image {
+  width: 27px;
+  height: 27px;
+}
+
+.tab-bar-item-custom .tab-bar-item-icon image {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.tab-bar-item-text {
+  font-size: 20rpx;
+}
+
+.red-dot {
+  position: absolute;
+  background-color: red;
+  top: 0;
+  right: 0;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: translate3d(10rpx, 0, 0);
+}
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.flex-column {
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.modal-dialog {
+
+  overflow: hidden;
+ 
+
+  z-index: 9999;
+
+  width: 100vw;
+height: 478rpx;
+position: fixed;
+bottom: 0;
+background: #fff;
+}
+
+.modal-title {
+  padding: 40rpx;
+ 
+  font-size: 32rpx;
+  color: #030303;
+  text-align: center;
+}
+.yuan{
+
+width: 112rpx;
+height: 112rpx;
+background: #07264A;
+border-radius: 50%;
+
+}
+.img{
+
+ width:60rpx;
+ height: 60rpx;
+
+}
+.txt{
+  color:#333333;font-size:24rpx;margin-top:40rpx;
+}
+.guanbi{
+
+width: 34rpx;
+height: 34rpx;
+
+}

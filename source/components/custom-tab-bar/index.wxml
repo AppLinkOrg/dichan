@@ -1,0 +1,29 @@
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{tanchu==true}}">
+</view>
+
+
+
+
+
+
+
+<view class="tab-bar" style="background-color: {{config.backgroundColor}};z-index:9999">
+  <view class="tab-bar-border"></view>
+  <view class="tab-bar-list">
+    <view class="tab-bar-item" style="color: {{item.idx === activeIdx ? config.selectedColor : config.color}}; order: {{item.idx}};" wx:for="{{list}}" wx:key="{{item.pagePath}}" data-page-path="{{item.pagePath}}" bind:tap="switchTab">
+      <view class="tab-bar-item-icon">
+        <image binderror="handleError" src="{{item.idx === activeIdx ? item.selectedIconPath : item.iconPath}}" />
+        <view wx:if="{{item.redDot}}" class="red-dot"></view>
+      </view>
+      <view class=" tab-bar-item-text">{{item.text}}</view>
+    </view>
+    <!-- start: custom -->
+    <!-- 此处需要自定义，如果不需要可以直接删除这块代码 -->
+    <!-- <view class='tab-bar-item tab-bar-item-custom' bind:tap="qiehuan" style='order: {{customOrder}};'>
+      <view class='tab-bar-item-icon'>
+        <image src="../../images/icons/asd.png" />
+      </view>
+    </view> -->
+    <!-- end: custom -->
+  </view>
+</view>

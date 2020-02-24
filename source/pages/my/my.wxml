@@ -1,0 +1,5 @@
+<!--pages/my/my.wxml-->
+<text>pages/my/my.wxml</text>
+
+
+<custom-tab-bar></custom-tab-bar>

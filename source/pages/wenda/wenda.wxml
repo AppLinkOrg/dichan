@@ -1,0 +1,5 @@
+<!--pages/wenda/wenda.wxml-->
+<text>pages/wenda/wenda.wxml</text>
+
+
+<custom-tab-bar></custom-tab-bar>

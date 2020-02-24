@@ -1,51 +1,32 @@
-.Top{
-  background-color:#2699EC;
+
+.bg-4b {
+  background: #4EB1FF;
 }
-.search{
-  width:680rpx;
-  border-radius: 7rpx;
-  background-color: white;
+.inp {
+  width: 600rpx;
+  height: 60rpx;
+  /* border: 1rpx solid #cccccc; */
+  border-radius: 20rpx;
+  background: #ffffff;
 }
-.search_icon{
-  height:40rpx;
-  width:40rpx;
+.cc {
+  background: #3E8FCE;
+  padding: 5rpx 15rpx;
+  border-radius: 20rpx;
 }
-.Mid{
-  height: 150rpx;
+
+.xiala{
+  width: 130rpx;
+  position: fixed;
+  top: 147rpx;
+  left: 10rpx;
+  background: #ffffff;
+  text-align: center;
 }
-.mid1{
-  background:#F6511D;
-  border-radius:10rpx;
+.borb {
+  border-bottom: 1rpx solid #cccccc;
+  padding: 10rpx 0;
 }
-.mid2{
-  background:#FFB400;
-  border-radius:10rpx;
-}
-.evaluation{
-  background-color: #2699EC;
-  border-radius: 10rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
-}
-.Under{
-  margin-top: 50rpx;
-  border-bottom: 1rpx solid rgb(233, 231, 231);
-}
-.phone{
-  border-radius: 10rpx;
-  box-shadow: 1px 1px 7px rgb(231, 228, 228);
-}
-.icon{
-  width: 110rpx;
-  height: 180rpx;
-}
-.column{
-  align-content: center;
-  flex-direction:column;
-}
-.ma-0{
-  margin-left: 20rpx;
-}
-.ma-1{
-  margin-left: 20rpx;
+.cactive {
+  color: #4EB1FF;
 }
