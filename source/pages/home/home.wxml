@@ -1,24 +1,85 @@
-
-
-<cu-custom bgColor="bg-4b" >
-   <view class="flex-row flex-center bg-4b " slot="content">
- <view class="flex-1"></view>
-  <view class="flex-row flex-center cc" bindtap='qiehuan'>
-    <view class="txt-white h5">{{currentcity.name}}</view>
-    <image src="{{uploadpath}}resource/{{res.cityxaila}}" class="icon-15 margin-top-5"></image>
+<cu-custom bgColor="bg-4b">
+  <view class="flex-row flex-center bg-4b " slot="content">
+    <view class="flex-1"></view>
+    <view class="flex-row flex-center cc" bindtap='qiehuan'>
+      <view class="txt-white h5">{{currentcity.name}}</view>
+      <image src="{{uploadpath}}resource/{{res.cityxaila}}" class="icon-15 margin-top-5"></image>
+    </view>
+    <view class="flex-1"></view>
+    <view class="inp flex-row flex-center">
+      <image src='{{uploadpath}}resource/{{res.sousuo}}' class="icon margin-left-15 margin-right-10"></image>
+      <input type="text"></input>
+    </view>
+    <view class="flex-1"></view>
   </view>
-  <view class="flex-1"></view>
-  <view class="inp flex-row flex-center">
-    <image src='{{uploadpath}}resource/{{res.sousuo}}' class="icon margin-left-15 margin-right-10"></image>
-    <input type="text" ></input>
-  </view>
-  <view class="flex-1"></view>
-</view>
-	<!-- <view slot="content">活动</view> -->
+  <!-- <view slot="content">活动</view> -->
 </cu-custom>
-
+<!-- 城市 -->
 <view class="xiala" wx:if='{{showcity==true}}'>
   <view bindtap="switchcity" data-current="{{item}}" id='{{idx}}' wx:for='{{citylist}}' wx:key='k' wx:for-index='idx' class="borb {{seq==idx?'cactive':''}}">{{item.name}}</view>
 </view>
- <view class="bg-4b" style='height:300rpx'></view>
+<view class="bg-4b" style='height:20rpx'></view>
+
+<!-- 顶部轮播图 -->
+<swiper class="screen-swiper square-dot" autoplay='true' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:100vw;height:420rpx;'>
+  <swiper-item wx:for="{{indexbanner}}" wx:key="k" class='text-center'>
+    <view class="bg-4b po"></view>
+    <image src='{{uploadpath}}indexbanner/{{item.img}}' bindtap='bannerGo' id="{{item.id}}" class='dlun'></image>
+  </swiper-item>
+</swiper>
+
+<!-- 分类 -->
+<view style="padding:0 30rpx;">
+  <view class="flex-row flex-wrap">
+    <view wx:for='{{typeslist}}' wx:key='k' wx:for-index='idx'>
+      <image src='{{uploadpath}}types/{{item.imgs}}' style='width:119rpx;height:135rpx;margin-right:20rpx;'></image>
+    </view>
+  </view>
+</view>
+<view style="height:10rpx;"></view>
+<!-- 头条资讯 -->
+<view class="flex-row flex-center">
+  <view class="flex-1"></view>
+  <view class="flex-row flex-column">
+    <view class="h4 txt-56 txt-bold">头条资讯</view>
+    <view class="h6 bg-56 txt-white margin-top-5" style="padding:5rpx 20rpx;border-radius:10rpx">2月13日</view>
+  </view>
+  <view style="width:4rpx;height:90rpx;background:#56AAEF; margin:0 20rpx 0 20rpx;"></view>
+  <view class="flex-row flex-column txt-85">
+    <view class=" flex-row flex-center">
+      <view style='width:10rpx;height:10rpx;background:#56AAEF;border-radius: 50%;margin-right:10rpx'></view>
+      <view class="h6">多图揭秘，复工后的深圳长这个样子.....</view>
+    </view>
+    <view class=" flex-row flex-center">
+      <view style='width:10rpx;height:10rpx;background:#56AAEF;border-radius:50%;margin-right:10rpx'></view>
+      <view class="h6">多图揭秘，复工后的深圳长这个样子.....</view>
+    </view>
+  </view>
+  <view class="flex-1"></view>
+</view>
+
+<!-- 中部轮播 -->
+<swiper class="screen-swiper square-dot" autoplay='true' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style="width:100vw;height:320rpx;">
+  <swiper-item wx:for="{{lunbo}}" wx:key="k" class='text-center'>
+    <image src='{{uploadpath}}lunbo/{{item.img}}' id="{{item.id}}" style="width:100vw;height:319rpx;"></image>
+  </swiper-item>
+</swiper>
+
+<!-- 热门片区 -->
+<view>
+  <view class="h4 txt-bold" style="color:#3383C8;background:linear-gradient(#C9E7FF, #E8F6FF);padding:10rpx 0 10rpx 50rpx;">热门片区</view>
+  <view style="height:28rpx;"></view>
+  <view class="flex-row flex-wrap">
+    <view wx:for='{{currentcity.shiqu}}' wx:key='k' wx:for-index='idx' style="padding:10rpx 30rpx 10rpx 20rpx;margin:0 20rpx 20rpx;border-radius:20rpx;" class="{{shi==idx?'bg-2f':''}} shadow" bindtap="qubind" id='{{idx}}'>
+      <view class="" style="color:#2F89CC">{{item.name}}</view>
+      <view class="h7" style="color:#2F89CC">HOT</view>
+    </view>
+  </view>
+  <view class="flex-row flex-wrap">
+    <view wx:for='{{shax}}' class="h6" style='color:#4489BD;margin:0 30rpx 10rpx;'>{{item.name}}</view>
+  </view>
+</view>
+
+<view style='height:200rpx;'></view>
+
 <custom-tab-bar></custom-tab-bar>

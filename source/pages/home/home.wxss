@@ -1,4 +1,3 @@
-
 .bg-4b {
   background: #4EB1FF;
 }
@@ -22,6 +21,7 @@
   left: 10rpx;
   background: #ffffff;
   text-align: center;
+  z-index: 10;
 }
 .borb {
   border-bottom: 1rpx solid #cccccc;
@@ -29,4 +29,38 @@
 }
 .cactive {
   color: #4EB1FF;
+}
+.dlun {
+  width: 95%;
+  height: 400rpx;
+  border-radius: 20rpx;
+  z-index: 3;
+  position: relative;
+  top: -297rpx;
+  
+}
+.po {
+  width: 100vw;
+  height: 300rpx;
+}
+.txt-56 {
+  color: #56AAEF;
+}
+.bg-56 {
+  background:#56AAEF;
+}
+.txt-85 {
+  color: #858487;
+}
+.bg-2f {
+  background:#2F89CC;
+}
+.bg-2f view {
+   color: #ffffff !important;
+}
+.shadow {
+  -moz-box-shadow:2rpx 2rpx 5rpx #333333; 
+  -webkit-box-shadow:2rpx 2rpx 5rpx #333333;
+   box-shadow:0rpx 2rpx 5rpx #333333;
+
 }
