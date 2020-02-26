@@ -69,15 +69,101 @@
 <view>
   <view class="h4 txt-bold" style="color:#3383C8;background:linear-gradient(#C9E7FF, #E8F6FF);padding:10rpx 0 10rpx 50rpx;">热门片区</view>
   <view style="height:28rpx;"></view>
+
   <view class="flex-row flex-wrap">
-    <view wx:for='{{currentcity.shiqu}}' wx:key='k' wx:for-index='idx' style="padding:10rpx 30rpx 10rpx 20rpx;margin:0 20rpx 20rpx;border-radius:20rpx;" class="{{shi==idx?'bg-2f':''}} shadow" bindtap="qubind" id='{{idx}}'>
+    <view wx:for='{{currentcity.shiqu}}' wx:key='k' wx:for-index='idx' style="padding:10rpx 30rpx 10rpx 20rpx;margin:0 20rpx 20rpx;border-radius:20rpx;" class="{{shi==idx?'bg-2f':''}} shadow" bindtap="qubind" id='{{idx}}' data-currentId='{{item.id}}'>
       <view class="" style="color:#2F89CC">{{item.name}}</view>
       <view class="h7" style="color:#2F89CC">HOT</view>
     </view>
   </view>
+
   <view class="flex-row flex-wrap">
-    <view wx:for='{{shax}}' class="h6" style='color:#4489BD;margin:0 30rpx 10rpx;'>{{item.name}}</view>
+    <view wx:for='{{shax}}' class="h6" style='color:#4489BD;margin:0 25rpx 10rpx;'>{{item.name}} </view>
   </view>
+
+  <view class="flex-row flex-wrap" style="padding:0 2%;">
+    <view wx:for='{{pqlist}}' wx:key='k' style="width: 46%;height: 500rpx;margin:2%;border:1rpx solid #cccccc;">
+      <image src='{{uploadpath}}loupan/{{item.img}}' style='width:100%;height:70%;'></image>
+      <view style='padding:0 10rpx;'>
+        <view class="h5 txt-bold txt-black">{{item.name}}</view>
+        <view class="h7" style="color:#7B808C;margin: 10rpx 0;">{{item.city_id_name}} | {{item.qu_id_name}}</view>
+        <view class="flex-row flex-center">
+          <view class="h5 nowrap" style="color:#A80E27;">￥{{item.prices}}/㎡</view>
+          <view class="flex-1"></view>
+          <view class="h7 nowrap" style="color:#4082BB;">我要团购</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="text-center h5" style="color:#4082BB;">点击查看更多></view>
+  <view style="height:36rpx;"></view>
+</view>
+
+<!-- 热门楼盘 -->
+<view>
+  <view class="h4 txt-bold" style="color:#3383C8;background:linear-gradient(#C9E7FF, #E8F6FF);padding:10rpx 0 10rpx 50rpx;">热门楼盘</view>
+  <view style="height:28rpx;"></view>
+
+  <view wx:for='{{rmlist}}' wx:key='k'>
+    <view class="flex-row flex-center" style="width:100%;height:206rpx;">
+      <view style="width:5%;"></view>
+      <image src="{{uploadpath}}loupan/{{item.img}}" style="width:44%;height:100%;"></image>
+      <view style="width:5%;"></view>
+      <view>
+        <view class="txt-bold txt-black h4">{{item.name}}</view>
+        <view class="flex-row flex-center" style="margin:10rpx 0;">
+          <view class="h6 nowrap" style="color:#A80E27;">￥{{item.prices}}/㎡</view>
+          <view class="h6" style="color:#7B808C;margin: 0 15rpx;">{{item.areas}}㎡</view>
+        </view>
+        <view class="h6" style="color:#7B808C;">{{item.city_id_name}} | {{item.qu_id_name}}</view>
+        <view class="flex-row flex-center" style="margin:10rpx 0;">
+          <view class="h6" wx:for='{{item.biaoqian}}' wx:key='k' style="background:{{item.bgcolor}};padding:5rpx 10rpx;">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+    <view style="height:30rpx;"></view>
+    <view style="height:1rpx;width:90%;background:#cccccc;margin:0 5%;"></view>
+     <view style="height:30rpx;"></view>
+  </view>
+
+  <view class="text-center h5" style="color:#4082BB;">点击查看更多></view>
+  <view style="height:36rpx;"></view>
+</view>
+
+<!-- 网红楼盘 -->
+<view>
+  <view class="h4 txt-bold" style="color:#3383C8;background:linear-gradient(#C9E7FF, #E8F6FF);padding:10rpx 0 10rpx 50rpx;">网红楼盘</view>
+  <view style="height:28rpx;"></view>
+
+  <view wx:for='{{whlist}}' wx:key='k'>
+    <view class="flex-row flex-center" style="width:100%;height:206rpx;">
+      <view style="width:5%;"></view>
+      <image src="{{uploadpath}}loupan/{{item.img}}" style="width:44%;height:100%;"></image>
+      <view style="width:5%;"></view>
+      <view>
+        <view class="txt-bold txt-black h4">{{item.name}}</view>
+        <view class="flex-row flex-center" style="margin:10rpx 0;">
+          <view class="h6 nowrap" style="color:#A80E27;">￥{{item.prices}}/㎡</view>
+          <view class="h6" style="color:#7B808C;margin: 0 15rpx;">{{item.areas}}㎡</view>
+        </view>
+        <view class="h6" style="color:#7B808C;">{{item.city_id_name}} | {{item.qu_id_name}}</view>
+        <view class="flex-row flex-center" style="margin:10rpx 0;">
+          <view class="h6" wx:for='{{item.biaoqian}}' wx:key='k' style="background:{{item.bgcolor}};padding:5rpx 10rpx;">{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+    <view style="height:1rpx;width:90%;background:#cccccc;margin: 30rpx 5%;"></view>
+  </view>
+
+  <view class="text-center h5" style="color:#4082BB;">点击查看更多></view>
+  <view style="height:36rpx;"></view>
+</view>
+
+<!-- 本周活动 -->
+
+<view>
+  <view class="h4 txt-bold" style="color:#3383C8;background:linear-gradient(#C9E7FF, #E8F6FF);padding:10rpx 0 10rpx 50rpx;">本周活动</view>
+  <view style="height:28rpx;"></view>
 </view>
 
 <view style='height:200rpx;'></view>

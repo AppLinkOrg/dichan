@@ -157,8 +157,8 @@ export class AppBase {
   onReady() {
     console.log("onReady");
   }
-  minimm
   onShow() {
+    console.log('11111')
     var that = this;
     var instapi = new InstApi();
     instapi.resources({}, (res) => {
@@ -188,10 +188,11 @@ export class AppBase {
 
       }
     }, false);
-
+    console.log('33333')
+    console.log(AppBase.UserInfo.openid,'33333')
     if (AppBase.UserInfo.openid == undefined) {
       // 登录
-      console.log("onShow");
+      console.log("onShow",'333');
       wx.login({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -199,7 +200,7 @@ export class AppBase {
           wx.getUserInfo({
             success: userres => {
               AppBase.UserInfo = userres.userInfo;
-              console.log(userres);
+              console.log(userres,'33');
 
               var memberapi = new MemberApi();
               memberapi.getuserinfo({
@@ -256,8 +257,10 @@ export class AppBase {
           })
         }
       });
+      console.log('33','结束')
       return false;
     } else {
+      console.log('hhhhh','3333')
       if (that.setMyData != undefined) {
         that.setMyData({
           UserInfo: AppBase.UserInfo
@@ -272,12 +275,13 @@ export class AppBase {
       that.Base.setMyData({
         UserInfo: AppBase.UserInfo
       });
-
+      console.log('22222')
       that.checkPermission();
     }
-
+    console.log('444444')
   }
   checkPermission() {
+    console.log('陹几分ID几分')
     var memberapi = new MemberApi();
     var that = this;
     memberapi.info({}, (info) => {

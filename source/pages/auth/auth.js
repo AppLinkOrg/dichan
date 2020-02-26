@@ -17,15 +17,27 @@ class Content extends AppBase {
     //options.id=5;
     super.onLoad(options);
     this.Base.needauth = false;
+    this.Base.setMyData({
+      isgrantuser: false,
+    })
+   
   }
   onMyShow() {
     var that = this;
+    var memberInfo = this.Base.getMyData().memberinfo
+
+    this.Base.setMyData({
+      memberInfo
+    })
   }
+  
   checkPermission() {
 
   }
 
   getUserInfo(e) {
+    AppBase.UserInfo.openid = undefined;
+    this.Base.setMyData({ isgrantuser: true })
     console.log(666666666);
     wx.switchTab({
       url: '/pages/home/home',

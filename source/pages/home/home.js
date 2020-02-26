@@ -4,6 +4,7 @@ import { ApiConfig } from "../../apis/apiconfig";
 import { InstApi } from "../../apis/inst.api.js";
 import { CityApi } from "../../apis/city.api.js";
 import { MemberApi } from "../../apis/member.api.js";
+import { LoupanApi } from "../../apis/loupan.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -12,24 +13,7 @@ class Content extends AppBase {
   onLoad(options) {
     this.Base.Page = this;
     //options.id=5;
-    var shax = [
-      {
-        id:1,
-        name:'300W以下'
-      },
-      {
-        id: 2,
-        name: '300w-500w'
-      },
-      {
-        id: 3,
-        name: '500w-800w'
-      },
-      {
-        id: 4,
-        name: '800W以上'
-      },
-    ]
+    
     super.onLoad(options);
     this.Base.setMyData({
       StatusBar: getApp().globalData.StatusBar,
@@ -42,7 +26,7 @@ class Content extends AppBase {
         id: 1,
         name: "深圳"
       },
-      shax
+      
     })
   }
   onMyShow() {
@@ -51,6 +35,8 @@ class Content extends AppBase {
     this.gettypelist();
     this.getbanner();
     this.getlunbo();
+    this.getprice();
+    this.getloupan();
   }
   getcity(){
     var currentcity = this.Base.getMyData().currentcity;
@@ -79,11 +65,46 @@ class Content extends AppBase {
       this.Base.setMyData({ typeslist})
     })
   }
+  getprice(){
+    var loupanapi = new LoupanApi;
+    loupanapi.pricerange({orderby:'r_main.seq'}, (pricerange)=>{
+      this.Base.setMyData({
+        shax:pricerange
+      })
+    })
+  }
+  getloupan(){
+    var currentcity = this.Base.getMyData().currentcity;
+    var loupanapi = new LoupanApi;
+    var pqlist=[];
+    var rmlist=[];
+    var whlist=[];
+    loupanapi.loupanlist({}, (loupanlist)=>{
+      console.log(loupanlist,'lou')
+      for(var i=0;i<loupanlist.length;i++){
+        if (loupanlist[i].city_id == currentcity.id){
+          if (loupanlist[i].type == 'A') {
+            pqlist.push(loupanlist[i]);
+          } else if (loupanlist[i].type == 'B') {
+            rmlist.push(loupanlist[i]);
+          } else {
+            whlist.push(loupanlist[i]);
+          }
+        }
+      }
+      this.Base.setMyData({
+        pqlist, rmlist, whlist,
+        temppqlist:pqlist,
+        temprmlist:rmlist,
+        tempwhlist:whlist
+      })
+    })
+  }
   qiehuan(){
     var showcity = this.Base.getMyData().showcity;
     showcity = !showcity;
     this.Base.setMyData({
-      showcity
+      showcity,
     })
   }
   switchcity(e){
@@ -94,14 +115,25 @@ class Content extends AppBase {
     this.Base.setMyData({
       currentcity:cur,
       showcity:false,
-      seq: idx
+      seq: idx,
+      shi: 0
     })
+    this.getloupan();
   }
   qubind(e){
-    console.log(e)
+    console.log(e);
+    var id = e.currentTarget.dataset.currentid;
     var cur = e.currentTarget.id;
+    var pqlist = this.Base.getMyData().temppqlist;
+    var arr = [];
+    for(var i=0;i<pqlist.length;i++){
+      if (pqlist[i].qu_id==id){
+        arr.push(pqlist[i]);
+      }
+    }
     this.Base.setMyData({
-      shi:cur
+      shi:cur,
+      pqlist:arr
     })
   }
 }
@@ -116,4 +148,6 @@ body.gettypelist = content.gettypelist;
 body.getbanner = content.getbanner;
 body.getlunbo = content.getlunbo;
 body.qubind = content.qubind;
+body.getloupan = content.getloupan;
+body.getprice = content.getprice;
 Page(body)

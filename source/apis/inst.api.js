@@ -137,7 +137,7 @@ export class InstApi{
         })
     }
 
-    resources(json, callback, showLoading = true) {
+    lunbo(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -146,7 +146,7 @@ export class InstApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'inst/resources',
+            url: ApiConfig.GetApiUrl() + 'inst/lunbo',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -169,7 +169,7 @@ export class InstApi{
         })
     }
 
-    lunbo(json, callback, showLoading = true) {
+    resources(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -178,7 +178,7 @@ export class InstApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'inst/lunbo',
+            url: ApiConfig.GetApiUrl() + 'inst/resources',
             data: json,
             method: 'POST',
             dataType: 'json',
