@@ -31,7 +31,7 @@
 <!-- 分类 -->
 <view style="padding:0 30rpx;">
   <view class="flex-row flex-wrap">
-    <view wx:for='{{typeslist}}' wx:key='k' wx:for-index='idx'>
+    <view wx:for='{{typeslist}}' wx:key='k' wx:for-index='idx' bindtap="todetails" data-diwei="{{item.lujing}}">
       <image src='{{uploadpath}}types/{{item.imgs}}' style='width:119rpx;height:135rpx;margin-right:20rpx;'></image>
     </view>
   </view>
@@ -164,6 +164,7 @@
 <view>
   <view class="h4 txt-bold" style="color:#3383C8;background:linear-gradient(#C9E7FF, #E8F6FF);padding:10rpx 0 10rpx 50rpx;">本周活动</view>
   <view style="height:28rpx;"></view>
+  <!-- <image src="{{uploadpath}}resource/{{res.huodong}}"></image> -->
 </view>
 
 <view style='height:200rpx;'></view>

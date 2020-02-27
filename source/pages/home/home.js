@@ -136,6 +136,41 @@ class Content extends AppBase {
       pqlist:arr
     })
   }
+  todetails(e){
+    var rmlist = this.Base.getMyData().rmlist;
+    var pqlist = this.Base.getMyData().pqlist;
+    var lujing = e.currentTarget.dataset.diwei;
+
+    if (pqlist.length>3){
+      var blen = 1391;
+    }else {
+      var blen = 1141;
+    }
+    if (rmlist.length > 3) {
+      var clen = 1750;
+    } else {
+      var clen = 1141+(118*rmlist.length);
+    }
+    console.log(clen,'pp')
+    console.log(e);
+    
+    if(lujing=='a'){
+     wx.pageScrollTo({
+       scrollTop: 661,
+       duration: 300
+     })
+    } else if (lujing == 'b') {
+      wx.pageScrollTo({
+        scrollTop: blen,
+        duration: 300,
+      })
+    } else if (lujing == 'c') {
+      wx.pageScrollTo({
+        scrollTop: clen,
+        duration: 300,
+      })
+    }
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -150,4 +185,5 @@ body.getlunbo = content.getlunbo;
 body.qubind = content.qubind;
 body.getloupan = content.getloupan;
 body.getprice = content.getprice;
+body.todetails = content.todetails;
 Page(body)
