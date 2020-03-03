@@ -82,7 +82,7 @@
   </view>
 
   <view class="flex-row flex-wrap" style="padding:0 2%;">
-    <view wx:for='{{pqlist}}' wx:key='k' style="width: 46%;height: 500rpx;margin:2%;border:1rpx solid #cccccc;">
+    <view wx:for='{{pqlist}}' wx:key='k' style="width: 46%;height: 500rpx;margin:2%;border:1rpx solid #cccccc;" bindtap="xiangqin" id="{{item.id}}">
       <image src='{{uploadpath}}loupan/{{item.img}}' style='width:100%;height:70%;'></image>
       <view style='padding:0 10rpx;'>
         <view class="h5 txt-bold txt-black">{{item.name}}</view>
@@ -104,7 +104,7 @@
   <view class="h4 txt-bold" style="color:#3383C8;background:linear-gradient(#C9E7FF, #E8F6FF);padding:10rpx 0 10rpx 50rpx;">热门楼盘</view>
   <view style="height:28rpx;"></view>
 
-  <view wx:for='{{rmlist}}' wx:key='k'>
+  <view wx:for='{{rmlist}}' wx:key='k' bindtap="xiangqin" id="{{item.id}}">
     <view class="flex-row flex-center" style="width:100%;height:206rpx;">
       <view style="width:5%;"></view>
       <image src="{{uploadpath}}loupan/{{item.img}}" style="width:44%;height:100%;"></image>
@@ -117,7 +117,7 @@
         </view>
         <view class="h6" style="color:#7B808C;">{{item.city_id_name}} | {{item.qu_id_name}}</view>
         <view class="flex-row flex-center" style="margin:10rpx 0;">
-          <view class="h6" wx:for='{{item.biaoqian}}' wx:key='k' style="background:{{item.bgcolor}};padding:5rpx 10rpx;">{{item.name}}</view>
+          <view class="h6" wx:for='{{item.biaoqian}}' wx:key='k' style="background-image:url('{{uploadpath}}biaoqian/{{item.bgcolor}}');margin-right:10rpx;">{{item.name}}</view>
         </view>
       </view>
     </view>
@@ -135,7 +135,7 @@
   <view class="h4 txt-bold" style="color:#3383C8;background:linear-gradient(#C9E7FF, #E8F6FF);padding:10rpx 0 10rpx 50rpx;">网红楼盘</view>
   <view style="height:28rpx;"></view>
 
-  <view wx:for='{{whlist}}' wx:key='k'>
+  <view wx:for='{{whlist}}' wx:key='k' bindtap="xiangqin" id="{{item.id}}">
     <view class="flex-row flex-center" style="width:100%;height:206rpx;">
       <view style="width:5%;"></view>
       <image src="{{uploadpath}}loupan/{{item.img}}" style="width:44%;height:100%;"></image>
@@ -148,7 +148,7 @@
         </view>
         <view class="h6" style="color:#7B808C;">{{item.city_id_name}} | {{item.qu_id_name}}</view>
         <view class="flex-row flex-center" style="margin:10rpx 0;">
-          <view class="h6" wx:for='{{item.biaoqian}}' wx:key='k' style="background:{{item.bgcolor}};padding:5rpx 10rpx;">{{item.name}}</view>
+          <view class="h6" wx:for='{{item.biaoqian}}' wx:key='k' style="background-image:url('{{uploadpath}}biaoqian/{{item.bgcolor}}');margin-right:10rpx;">{{item.name}}</view>
         </view>
       </view>
     </view>

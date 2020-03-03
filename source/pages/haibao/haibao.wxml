@@ -1,0 +1,12 @@
+
+
+<view class="flex-row flex-column">
+
+  <image src="{{uploadpath}}resource/{{res.fenxiangtu}}" style="width:90%;"></image>
+  <view class="height:30rpx;"></view>
+  <view>保存海报</view>
+</view>
+
+
+
+ 

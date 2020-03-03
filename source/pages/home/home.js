@@ -16,9 +16,9 @@ class Content extends AppBase {
     
     super.onLoad(options);
     this.Base.setMyData({
-      StatusBar: getApp().globalData.StatusBar,
-      CustomBar: getApp().globalData.CustomBar,
-      Custom: getApp().globalData.Custom,
+      // StatusBar: getApp().globalData.StatusBar,
+      // CustomBar: getApp().globalData.CustomBar,
+      // Custom: getApp().globalData.Custom,
       seq: 2,
       shi:0,
       showcity:false,
@@ -171,6 +171,13 @@ class Content extends AppBase {
       })
     }
   }
+  xiangqin(e){
+    console.log(e);
+    var id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/lpdetail/lpdetail?id='+id,
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -186,4 +193,5 @@ body.qubind = content.qubind;
 body.getloupan = content.getloupan;
 body.getprice = content.getprice;
 body.todetails = content.todetails;
+body.xiangqin = content.xiangqin;
 Page(body)

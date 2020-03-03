@@ -1,15 +1,15 @@
 /*******使用方法，下面两句复制到page的js文件的头部
 
 import { ApiConfig } from '../../apis/apiconfig';
-import { InstApi } from '../../apis/loupan.api';
+import { InstApi } from '../../apis/post.api';
 
-var loupanApi=new LoupanApi();
+var postApi=new PostApi();
 *******/
 import { ApiConfig } from 'apiconfig';
-export class LoupanApi{
+export class PostApi{
 
 
-    loupandetail(json, callback, showLoading = true) {
+    qrcode(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -18,7 +18,7 @@ export class LoupanApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'loupan/loupandetail',
+            url: ApiConfig.GetApiUrl() + 'post/qrcode',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -41,7 +41,7 @@ export class LoupanApi{
         })
     }
 
-    loupanlist(json, callback, showLoading = true) {
+    poster(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -50,39 +50,7 @@ export class LoupanApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'loupan/loupanlist',
-            data: json,
-            method: 'POST',
-            dataType: 'json',
-            header: header,
-            success: function (res) {
-                if (callback != null) {
-                    callback(res.data);
-                }
-            },
-            fail: function (res) {
-                console.log(res);
-                callback(false);
-            },
-            complete: function (res) {
-                console.log(res);
-            
-                if (showLoading)
-                    ApiConfig.CloseLoading();
-            }
-        })
-    }
-
-    pricerange(json, callback, showLoading = true) {
-
-        if (showLoading)
-            ApiConfig.ShowLoading();
-
-        var header = ApiConfig.GetHeader();
-        console.log(header);
-        console.log(json);
-        wx.request({
-            url: ApiConfig.GetApiUrl() + 'loupan/pricerange',
+            url: ApiConfig.GetApiUrl() + 'post/poster',
             data: json,
             method: 'POST',
             dataType: 'json',

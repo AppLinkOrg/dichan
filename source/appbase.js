@@ -157,6 +157,7 @@ export class AppBase {
   onReady() {
     console.log("onReady");
   }
+  
   onShow() {
     console.log('11111')
     var that = this;
@@ -257,8 +258,9 @@ export class AppBase {
           })
         }
       });
+      that.checkPermission();
       console.log('33','结束')
-      return false;
+      // return false;
     } else {
       console.log('hhhhh','3333')
       if (that.setMyData != undefined) {
@@ -285,7 +287,7 @@ export class AppBase {
     var memberapi = new MemberApi();
     var that = this;
     memberapi.info({}, (info) => {
-      if (info.mobile == "" && this.Base.needauth == true) {
+      if (info == null && this.Base.needauth == true) {
         wx.navigateTo({
           url: '/pages/auth/auth',
         })

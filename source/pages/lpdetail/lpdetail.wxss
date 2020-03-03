@@ -1,0 +1,79 @@
+/* pages/lpdetail/lpdetail.wxss */
+.bg-4b {
+  background: #4EB1FF;
+}
+.padding-right-46 {
+  padding-right: 46rpx;
+}
+.po {
+  width: 100vw;
+  height: 200rpx;
+}
+.dlun {
+  width: 93%;
+  height: 342rpx;
+  border-radius: 20rpx;
+  z-index: 3;
+  position: relative;
+  top: -198rpx;
+}
+.kaipan {
+  width:118rpx;
+  height:60rpx;
+  line-height: 57rpx;
+}
+.biao {
+  padding:2rpx 14rpx;
+  font-size:22rpx;
+  color:#0D0D0D;
+  margin-right:20rpx;
+}
+
+.nostyle view,navigator,input,text,textarea{
+  color:#777777;
+  font-size:unset;
+  
+  word-break: normal;
+  background: #ffffff;
+}
+
+.padding-28 {
+  padding: 40rpx 80rpx 0; 
+}
+
+.pf {
+  width: 100vw;
+  height: 126rpx;
+  position: fixed;
+  bottom: 0;
+  background: #ffffff;
+  padding:0 40rpx 0 84rpx;
+}
+.tuan {
+  width:188rpx;
+  height:90rpx; 
+  color:#ffffff;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.mask {
+  width: 100vw;
+  height: 1000vh;
+  background: #000000;
+  opacity: 0.5;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.zhuan {
+  width:80%;
+  height:200rpx;
+  position: fixed;
+  top: 50%;
+  left:10%;
+  background: #ffffff;
+  z-index: 10;
+  text-align: center;
+}

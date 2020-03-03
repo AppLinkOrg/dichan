@@ -1,0 +1,212 @@
+<cu-custom bgColor="bg-4b">
+  <view class="flex-row flex-center" slot="content">
+    <image src="{{uploadpath}}resource/{{res.fanhui}}" bindtap="backHome" style="width:50rpx;height:50rpx;"></image>
+    <view class="flex-1"></view>
+    <view class=" flex-row flex-center padding-right-46">
+      <image src="{{uploadpath}}resource/{{res.bgxiaoxi}}" style="width:50rpx;height:50rpx;background-image:url('{{uploadpath}}resource/{{res.redxiaoxi}}');background-size:8rpx 6rpx;background-repeat:no-repeat;background-position:38rpx 5rpx;"></image>
+      <image src="{{uploadpath}}resource/{{res.xiaoxi}}" style="width:28rpx;height:28rpx;margin-left:-40rpx;"></image>
+    </view>
+
+  </view>
+
+</cu-custom>
+
+<!-- 轮播图 -->
+<swiper class="screen-swiper square-dot" autoplay='true' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:100vw;height:380rpx;'>
+  <swiper-item wx:for="{{loupandetail.photos}}" wx:key="k" class='text-center'>
+    <view class="bg-4b po"></view>
+    <image src='{{uploadpath}}loupan/{{item.img}}' bindtap='bannerGo' id="{{item.id}}" class='dlun'></image>
+  </swiper-item>
+</swiper>
+
+<!-- 标题 -->
+<view style="padding:0 44rpx;">
+  <view class="flex-row flex-bottom">
+    <view class="h3 txt-bold" style="color:#3F3F3F;">{{loupandetail.name}}</view>
+    <view class="flex-1"></view>
+    <view class="kaipan text-center h5" style="background-image:url('{{uploadpath}}resource/{{res.yikaipan}}');background-size:100% 100%;color:#ffffff;">{{loupandetail.iskai_name}}</view>
+  </view>
+  <view style="height:8rpx;"></view>
+  <view class="flex-row flex-center">
+    <view class="biao" wx:for='{{loupandetail.biaoqian}}' wx:key='k' style="background-image:url('{{uploadpath}}biaoqian/{{item.bgcolor}}');">{{item.name}}</view>
+  </view>
+  <view style="height:24rpx;"></view>
+  <view class="flex-row flex-center">
+    <view>
+      <view style="font-size:26rpx;color:#212121;margin-bottom:10rpx;">{{loupandetail.city_id_name}}{{loupandetail.qu_id_name}}</view>
+      <view class="h7" style="color:#60626A;">{{loupandetail.dizhi}}</view>
+    </view>
+    <view style="width:2rpx;height:60rpx;background:#C3C4C6;margin:0 14rpx;"></view>
+    <view class="flex-row flex-column" bindtap="openMap" id="{{loupandetail.dizhi}}">
+      <image src="{{uploadpath}}resource/{{res.daohang}}" style='width:24rpx;height:32rpx;'></image>
+      <view style="font-size:12rpx;color:#3F3F3F;margin-top:8rpx;">点击导航</view>
+    </view>
+  </view>
+</view>
+<view style="height:48rpx;"></view>
+<view style="height:8rpx;width:100vw;background:#E7E4E7"></view>
+<view style="height:34rpx;"></view>
+<!-- 图标 -->
+
+<view class="flex-row flex-center">
+  <view class="flex-1"></view>
+  <view class="flex-row flex-column" bindtap="hua" id='A'>
+    <image src="{{uploadpath}}resource/{{res.cepin}}" style="width:54rpx;height:66rpx;"></image>
+    <view style="font-size:18rpx;color:#3F3F3F;margin-top:18rpx;">楼盘测评报告</view>
+  </view>
+  <view style="width:48rpx;"></view>
+  <view class="flex-row flex-column" bindtap="hua" id='B'>
+    <image src="{{uploadpath}}resource/{{res.zhuanjia}}" style="width:58rpx;height:64rpx;"></image>
+    <view style="font-size:18rpx;color:#3F3F3F;margin-top:22rpx;">楼盘专家测评</view>
+  </view>
+  <view style="width:48rpx;"></view>
+  <view class="flex-row flex-column" bindtap="hua" id='C'>
+    <image src="{{uploadpath}}resource/{{res.shipin}}" style="width:58rpx;height:54rpx;"></image>
+    <view style="font-size:18rpx;color:#3F3F3F;margin-top:30rpx;">楼盘视频展示</view>
+  </view>
+  <view style="width:48rpx;"></view>
+  <view class="flex-row flex-column">
+    <image src="{{uploadpath}}resource/{{res.vr}}" style="width:62rpx;height:44rpx;"></image>
+    <view class="h6 txt-bold" style="color:#3EABFF;">VR</view>
+    <view style="font-size:18rpx;color:#3F3F3F;margin-top:10rpx;">VR看房</view>
+  </view>
+  <view class="flex-1"></view>
+</view>
+
+
+<!-- 项目动态 -->
+<view style="height:40rpx;"></view>
+<view>
+  <view class="flex-row flex-center" style="background-image:url('{{uploadpath}}resource/{{res.lantiao}}');width:100vw;height:84rpx;background-size:100% 100%;">
+    <view class="txt-bold" style="margin-left:54rpx;font-size:42rpx;color:#3089CE;margin-right:20rpx;">项目动态</view>
+    <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>
+  </view>
+
+
+  <swiper style="padding:26rpx 72rpx 0 90rpx;" autoplay='false' circular='true' vertical='true'>
+    <swiper-item wx:for='{{loupandetail.dongtai}}' wx:key='k' style="">
+      <view style="font-size:22rpx;color:#A0A0A0;margin-bottom:18rpx;">{{item.shijian}}</view>
+      <view style="font-size:20rpx;">{{item.summary}}</view>
+    </swiper-item>
+  </swiper>
+
+  <!-- <view wx:for='{{loupandetail.dongtai}}' wx:key='k' style="padding:26rpx 72rpx 0 90rpx;">
+    <view style="font-size:22rpx;color:#A0A0A0;margin-bottom:18rpx;">{{item.shijian}}</view>
+    <view style="font-size:20rpx;">{{item.summary}}</view>
+  </view> -->
+
+</view>
+
+<!-- 置业顾问 -->
+<view style="height:40rpx;"></view>
+<view>
+  <view class="flex-row flex-center" style="background-image:url('{{uploadpath}}resource/{{res.lantiao}}');width:100vw;height:84rpx;background-size:100% 100%;">
+    <view class="txt-bold" style="margin-left:54rpx;font-size:42rpx;color:#3089CE;margin-right:20rpx;">置业顾问</view>
+    <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>
+  </view>
+
+
+  <view wx:for='{{loupandetail.guwen}}' wx:key='k' class="flex-row flex-center" style="padding:32rpx 38rpx 0 44rpx;">
+    <image src="{{uploadpath}}guwen/{{item.img}}" style="width:100rpx;height:100rpx;"></image>
+    <view class="margin-left:36rpx;">
+      <view class="h4 txt-bold" style="color:#3089CE;margin-bottom:8rpx;">{{item.name}}</view>
+      <view class="h6">{{item.shicheng}}</view>
+    </view>
+    <view class="flex-1"></view>
+    <view style="width:3rpx;height:98rpx;background:#54ACF0;margin-right:26rpx;"></view>
+    <view class="flex-row flex-bottom" bindtap="tiwen" data-phone="{{item.phone}}">
+      <image src="{{uploadpath}}resource/{{res.dianhua}}" style="width:54rpx;height:52rpx;"></image>
+      <view class="txt-bold" style="font-size:22rpx;color:#3089CE;">向我提问</view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 楼盘视频展示 -->
+<view style="height:40rpx;"></view>
+<view>
+  <view class="flex-row flex-center" style="background-image:url('{{uploadpath}}resource/{{res.lantiao}}');width:100vw;height:84rpx;background-size:100% 100%;">
+    <view class="txt-bold" style="margin-left:54rpx;font-size:42rpx;color:#3089CE;margin-right:20rpx;">楼盘视频展示</view>
+    <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>
+  </view>
+
+  <video src="{{uploadpath}}loupan/{{loupandetail.shiping}}" style="width:698rpx;height:300rpx;margin-left:26rpx;"></video>
+
+</view>
+
+<!-- 楼盘测评报告 -->
+<view style="height:40rpx;"></view>
+<view>
+  <view class="flex-row flex-center" style="background-image:url('{{uploadpath}}resource/{{res.lantiao}}');width:100vw;height:84rpx;background-size:100% 100%;">
+    <view class="txt-bold" style="margin-left:54rpx;font-size:42rpx;color:#3089CE;margin-right:20rpx;">楼盘测评报告</view>
+    <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>
+  </view>
+
+  <import src="../../wxParse/wxParse.wxml" />
+
+  <view class='nostyle padding-28 '>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+
+
+
+</view>
+
+<!-- 楼盘测评报告 -->
+<view style="height:40rpx;"></view>
+<view>
+  <view class="flex-row flex-center" style="background-image:url('{{uploadpath}}resource/{{res.lantiao}}');width:100vw;height:84rpx;background-size:100% 100%;">
+    <view class="txt-bold" style="margin-left:54rpx;font-size:42rpx;color:#3089CE;margin-right:20rpx;">楼盘专家点评</view>
+    <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>
+  </view>
+
+  <import src="../../wxParse/wxParse.wxml" />
+  <view class='nostyle  ' style="padding:32rpx 80rpx;">
+    <template is="wxParse" data="{{wxParseData:content2.nodes}}" />
+  </view>
+
+</view>
+
+
+
+<view style="height:140rpx;"></view>
+<!-- 底部 -->
+<view class="flex-row flex-center pf">
+  <view class="flex-row flex-column" wx:if='{{loupandetail.share=="C"}}' bindtap="douyou">
+    <image src="{{uploadpath}}resource/{{res.fenxiang}}" style="width:56rpx;height:36rpx;"></image>
+    <view style="margin-top:12rpx;font-size:18rpx;color:#3089CE">分享</view>
+  </view>
+
+   <view class="flex-row flex-column" wx:if='{{loupandetail.share=="B"}}' bindtap="haibao">
+    <image src="{{uploadpath}}resource/{{res.fenxiang}}" style="width:56rpx;height:36rpx;"></image>
+    <view style="margin-top:12rpx;font-size:18rpx;color:#3089CE">分享</view>
+  </view>
+
+  <button wx:if='{{loupandetail.share=="A"}}' class='text-center flex-1  clear-button' hover-class='bg_gray' open-type="share" style='border-radius:0;border:0;'>
+    <view class="flex-row flex-column">
+      <image src="{{uploadpath}}resource/{{res.fenxiang}}" style="width:56rpx;height:36rpx;"></image>
+      <view style="margin-top:12rpx;font-size:18rpx;color:#3089CE">分享</view>
+    </view>
+
+  </button>
+
+  <view class="flex-row flex-column" style="margin-left:38rpx;" bindtap="addshou">
+    <image src="{{uploadpath}}resource/{{res.shoucan}}" wx:if='{{shou==false}}' style="width:42rpx;height:38rpx;"></image>
+    <image src="{{uploadpath}}resource/{{res.yishoucan}}" wx:if='{{shou==true}}' style="width:42rpx;height:38rpx;"></image>
+    <view style="margin-top:10rpx;font-size:18rpx;color:#3089CE">收藏</view>
+  </view>
+
+  <view class="f-36 tuan" style="background-image:url('{{uploadpath}}resource/{{res.tuan}}');background-size:100% 100%;margin-left:86rpx;margin-right:20rpx;">我要团购</view>
+
+  <view class="f-36 tuan" style="background-image:url('{{uploadpath}}resource/{{res.tuan}}');background-size:100% 100%;" bindtap="viewPhoto" id='{{uploadpath}}loupan/{{loupandetail.qun}}'>交流群</view>
+</view>
+
+
+<view class='mask' wx:if='{{all==true}}' bindtap="douyou"></view>
+<view wx:if='{{all==true}}' class="zhuan">
+  <button  class='text-center flex-1  clear-button' hover-class='bg_gray' open-type="share" style='border-radius:0;border:0;' bindtap="douyou">
+    <view style="height:100rpx;line-height:100rpx" >转发好友</view>
+  </button>
+  <view style="height:100rpx;line-height:100rpx" bindtap="haibao">生成海报</view>
+</view>
+

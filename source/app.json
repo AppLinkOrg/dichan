@@ -5,7 +5,9 @@
     "pages/activity/activity",
     "pages/wenda/wenda",
     "pages/zixun/zixun",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/lpdetail/lpdetail",
+    "pages/haibao/haibao"
   ],
   "permission": {
     "scope.userLocation": {
