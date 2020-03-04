@@ -130,7 +130,12 @@
     <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>
   </view>
 
-  <video src="{{uploadpath}}loupan/{{loupandetail.shiping}}" style="width:698rpx;height:300rpx;margin-left:26rpx;"></video>
+  <video wx:if='{{loupandetail.shiping!=""}}' src="{{uploadpath}}loupan/{{loupandetail.shiping}}" style="width:698rpx;height:300rpx;margin-left:26rpx;"></video>
+
+  <view  class="text-center" wx:if='{{loupandetail.shiping==""}}'>
+  <view style="height:20rpx;"></view>
+    暂无视频
+  </view>
 
 </view>
 
@@ -196,7 +201,7 @@
     <view style="margin-top:10rpx;font-size:18rpx;color:#3089CE">收藏</view>
   </view>
 
-  <view class="f-36 tuan" style="background-image:url('{{uploadpath}}resource/{{res.tuan}}');background-size:100% 100%;margin-left:86rpx;margin-right:20rpx;">我要团购</view>
+  <view class="f-36 tuan" style="background-image:url('{{uploadpath}}resource/{{res.tuan}}');background-size:100% 100%;margin-left:86rpx;margin-right:20rpx;" bindtap="tuangou">我要团购</view>
 
   <view class="f-36 tuan" style="background-image:url('{{uploadpath}}resource/{{res.tuan}}');background-size:100% 100%;" bindtap="viewPhoto" id='{{uploadpath}}loupan/{{loupandetail.qun}}'>交流群</view>
 </view>

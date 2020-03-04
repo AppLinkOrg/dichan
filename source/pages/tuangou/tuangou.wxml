@@ -1,0 +1,95 @@
+<cu-custom bgColor="bg-4b">
+  <view class="flex-row flex-center" slot="content">
+    <image src="{{uploadpath}}resource/{{res.fanhui}}" bindtap="backHome" style="width:50rpx;height:50rpx;margin-left:34rpx;"></image>
+    <view style="font-size:38rpx;color:#ffffff;margin-left:36rpx;">团购</view>
+
+  </view>
+
+</cu-custom>
+
+<!-- 楼盘信息 -->
+
+<view class="flex-row flex-center" style='padding:30rpx 0 0 30rpx;'>
+  <image src="{{uploadpath}}loupan/{{loupandetail.img}}" style="width:200rpx;height:182rpx;"></image>
+  <view style="margin-left:28rpx;">
+      <view class="h4-5 " style="color:#333333;">{{loupandetail.name}}</view>
+      <view style="height:20rpx;"></view>
+      <view class="" style="font-size:26rpx;color:#666666;">{{loupandetail.cityqu_name}}</view>
+      <view style="font-size:26rpx;color:#999999;margin:10rpx 0 12rpx;">{{loupandetail.xinxi}}</view>
+      <view class="h4-5" style="color:#ED4949">{{loupandetail.prices}}元/㎡</view>
+  </view>
+</view>
+<view style="height:26rpx;"></view>
+<view style="width:100vw;height:8rpx;background:#E5E1E1;"></view>
+
+<view>
+    <view class='xixin flex-row flex-center'>
+      <image src="{{uploadpath}}resource/{{res.xinxi}}" style="width:8rpx;height:30rpx;"></image>
+      <view class="kehu h4-5 ">客户信息</view>
+    </view>
+
+    <view class="wh flex-row flex-center">
+        <view class="xin">姓名：</view>
+        <view class="flex-1"></view>
+        <input class="text-right" type="text" placeholder="请输入姓名" placeholder-style="color:#666666;" bindinput="nameFn" style="font-size:30rpx;"></input>
+        <view style="width:22rpx;"></view>
+        <image src="{{uploadpath}}resource/{{res.shuru}}" style="width:12rpx;height:32rpx;"></image>
+    </view>
+
+      <view class="wh flex-row flex-center">
+        <view class="xin">电话：</view>
+        <view class="flex-1"></view>
+        <input class="text-right" type="text" placeholder="请输入电话" placeholder-style="color:#666666;"  bindinput="mobileFn" style="font-size:30rpx;"></input>
+        <view style="width:22rpx;"></view>
+        <image src="{{uploadpath}}resource/{{res.shuru}}" style="width:12rpx;height:32rpx;"></image>
+    </view>
+
+      <view class="wh flex-row flex-center">
+        <view class="xin">地址：</view>
+        <view class="flex-1"></view>
+        <input class="text-right" type="text" placeholder="请输入地址" placeholder-style="color:#666666;"  bindinput="dizhiFn" style="font-size:30rpx;"></input>
+        <view style="width:22rpx;"></view>
+        <image src="{{uploadpath}}resource/{{res.shuru}}" style="width:12rpx;height:32rpx;"></image>
+    </view>
+
+      <view class="wh flex-row flex-center">
+        <view class="xin">身份证：</view>
+        <view class="flex-1"></view>
+        <input class="text-right" type="text" placeholder="请输入证件号码" placeholder-style="color:#666666;"  bindinput="shenfenFn" style="font-size:30rpx;"></input>
+        <view style="width:22rpx;"></view>
+        <image src="{{uploadpath}}resource/{{res.shuru}}" style="width:12rpx;height:32rpx;"></image>
+    </view>
+
+
+
+     <view class='xixin2 flex-row flex-center'>
+      <view class="kehu h4-5 ">请上传身份证图片：
+      </view>
+    </view>
+  <view style="height:46rpx;"></view>
+    <view class='flex-row flex-center'>
+    <view class="flex-1"></view>
+        <view wx:if='{{shenfen1==""}}' bindtap='zhenmian'  class="shenfen" style="background-image:url('{{uploadpath}}resource/{{res.shenfen1}}');background-size:100% 100%;">
+          <image src="{{uploadpath}}resource/{{res.shenfen2}}" class="fen2"></image>
+          <image src="{{uploadpath}}resource/{{res.shenfen3}}" class="fen3"></image>
+        </view>
+        <view wx:if='{{shenfen1!=""}}' bindtap='zhenmian'  class="shenfen">
+           <image src="{{uploadpath}}tuangou/{{shenfen1}}"  style="width:100%;height:100%;"></image>
+        </view>
+         <view class="flex-1"></view>
+          <view class="shenfen" bindtap='fanmian' wx:if='{{shenfen2==""}}' style="background-image:url('{{uploadpath}}resource/{{res.shenfen1}}');background-size:100% 100%;">
+          <image src="{{uploadpath}}resource/{{res.shenfen4}}" class="fen2"></image>
+          <image src="{{uploadpath}}resource/{{res.shenfen3}}" class="fen3"></image>
+        </view>
+         <view wx:if='{{shenfen2!=""}}' bindtap='fanmian'  class="shenfen">
+           <image src="{{uploadpath}}tuangou/{{shenfen2}}" style="width:100%;height:100%;"></image>
+        </view>
+         <view class="flex-1"></view>
+    </view>
+   
+</view>
+
+<view class="flex-row flex-center bobt text-center">
+  <view class="dijin">定金：{{loupandetail.dingjin}}元</view>
+  <view class="queren" style="background-image:url('{{uploadpath}}resource/{{res.tuan}}');background-size:100% 100%;" bindtap="queren" id='{{loupandetail.dingjin}}'>确认团购</view>
+</view>

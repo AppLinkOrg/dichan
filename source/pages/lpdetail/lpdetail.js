@@ -140,6 +140,12 @@ class Content extends AppBase {
 
     return;
   }
+
+  tuangou(){
+    wx.navigateTo({
+      url: '/pages/tuangou/tuangou?id='+this.Base.options.id,
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -151,4 +157,5 @@ body.addshou = content.addshou;
 body.hua = content.hua;
 body.douyou = content.douyou;
 body.haibao = content.haibao;
+body.tuangou = content.tuangou;
 Page(body)

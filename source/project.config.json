@@ -67,6 +67,13 @@
 					"id": -1,
 					"name": "pages/lpdetail/lpdetail",
 					"pathName": "pages/lpdetail/lpdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/tuangou/tuangou",
+					"pathName": "pages/tuangou/tuangou",
 					"scene": null
 				}
 			]

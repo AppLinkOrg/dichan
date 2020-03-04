@@ -9,7 +9,7 @@ import { ApiConfig } from 'apiconfig';
 export class PostApi{
 
 
-    qrcode(json, callback, showLoading = true) {
+    poster(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -18,7 +18,7 @@ export class PostApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'post/qrcode',
+            url: ApiConfig.GetApiUrl() + 'post/poster',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -41,7 +41,7 @@ export class PostApi{
         })
     }
 
-    poster(json, callback, showLoading = true) {
+    qrcode(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -50,7 +50,7 @@ export class PostApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'post/poster',
+            url: ApiConfig.GetApiUrl() + 'post/qrcode',
             data: json,
             method: 'POST',
             dataType: 'json',

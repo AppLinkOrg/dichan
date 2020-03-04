@@ -114,8 +114,8 @@ export class AppBase {
       contactkefu: base.contactkefu,
       contactweixin: base.contactweixin,
       download: base.download,
-      checkPermission: base.checkPermission
-
+      checkPermission: base.checkPermission,
+      info:base.info
 
 
     }
@@ -157,7 +157,12 @@ export class AppBase {
   onReady() {
     console.log("onReady");
   }
-  
+  info(msg){
+    wx.showToast({
+      title: msg,
+      icon:''
+    })
+  }
   onShow() {
     console.log('11111')
     var that = this;

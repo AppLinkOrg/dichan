@@ -4,6 +4,9 @@
 page{
   background: white;
 }
+.bg-4b {
+  background: #4EB1FF;
+}
 .clear-contact{
   position: absolute;  
   opacity: 0;

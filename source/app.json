@@ -7,7 +7,9 @@
     "pages/zixun/zixun",
     "pages/my/my",
     "pages/lpdetail/lpdetail",
-    "pages/haibao/haibao"
+    "pages/haibao/haibao",
+    "pages/tuangou/tuangou",
+    "pages/order/order"
   ],
   "permission": {
     "scope.userLocation": {
