@@ -9,15 +9,19 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-    //options.id=5;
+    // options.id=1;
     super.onLoad(options);
   }
   onMyShow() {
     var that = this;
+  }
+  fanhui(){
+
   }
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
+body.fanhui = content.fanhui;
 Page(body)

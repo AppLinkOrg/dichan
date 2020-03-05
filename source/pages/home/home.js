@@ -13,30 +13,45 @@ class Content extends AppBase {
   onLoad(options) {
     this.Base.Page = this;
     //options.id=5;
-    
+   
     super.onLoad(options);
     this.Base.setMyData({
       // StatusBar: getApp().globalData.StatusBar,
       // CustomBar: getApp().globalData.CustomBar,
       // Custom: getApp().globalData.Custom,
       seq: 2,
-      shi:0,
+      
       showcity:false,
       currentcity: {
         id: 1,
-        name: "深圳"
+        name: "深圳",
       },
       
     })
   }
   onMyShow() {
     var that = this;
+    this.Base.setMyData({
+      shi: null,
+    })
+    this.getloutype();
     this.getcity();
     this.gettypelist();
     this.getbanner();
     this.getlunbo();
     this.getprice();
-    this.getloupan();
+   
+  }
+  getloutype(){
+    var that = this;
+    var api = new LoupanApi;
+    api.loupantype({}, (loupantype)=>{
+      for (var i = 0; i < loupantype.length;i++){
+        loupantype[i].loulist=[];
+      }
+      that.Base.setMyData({ loupantype})
+      that.getloupan();
+    })
   }
   getcity(){
     var currentcity = this.Base.getMyData().currentcity;
@@ -74,29 +89,27 @@ class Content extends AppBase {
     })
   }
   getloupan(){
+    var loupantyped = this.Base.getMyData().loupantype;
     var currentcity = this.Base.getMyData().currentcity;
     var loupanapi = new LoupanApi;
     var pqlist=[];
     var rmlist=[];
     var whlist=[];
-    loupanapi.loupanlist({}, (loupanlist)=>{
+    var that = this;
+    loupanapi.loupanlist({ city_id: currentcity.id}, (loupanlist)=>{
       console.log(loupanlist,'lou')
       for(var i=0;i<loupanlist.length;i++){
-        if (loupanlist[i].city_id == currentcity.id){
-          if (loupanlist[i].type == 'A') {
-            pqlist.push(loupanlist[i]);
-          } else if (loupanlist[i].type == 'B') {
-            rmlist.push(loupanlist[i]);
-          } else {
-            whlist.push(loupanlist[i]);
-          }
+        for (var j = 0; j < loupantyped.length;j++){
+          // if (loupanlist[i].qu_id == currentcity.shiqu[0].id){
+            if (loupanlist[i].type_id == loupantyped[j].id) {
+              loupantyped[j].loulist.push(loupanlist[i]);
+            }
+          // }
         }
       }
-      this.Base.setMyData({
-        pqlist, rmlist, whlist,
-        temppqlist:pqlist,
-        temprmlist:rmlist,
-        tempwhlist:whlist
+      that.Base.setMyData({
+        loupanlists: loupantyped,
+        temp: loupanlist
       })
     })
   }
@@ -109,47 +122,56 @@ class Content extends AppBase {
   }
   switchcity(e){
     console.log(e);
+    var that = this;
     var cur = e.currentTarget.dataset.current;
     var idx = e.currentTarget.id;
     var seq = this.Base.getMyData().seq;
+    
     this.Base.setMyData({
       currentcity:cur,
       showcity:false,
       seq: idx,
-      shi: 0
+      shi: null,
     })
-    this.getloupan();
+    that.getloutype();
   }
   qubind(e){
     console.log(e);
     var id = e.currentTarget.dataset.currentid;
     var cur = e.currentTarget.id;
-    var pqlist = this.Base.getMyData().temppqlist;
+    var pqlist = this.Base.getMyData().temp;
+    var loupanlist = this.Base.getMyData().loupanlists;
+    console.log(pqlist, 'oo')
+    console.log(loupanlist[0].loulist,'oo')
     var arr = [];
-    for(var i=0;i<pqlist.length;i++){
-      if (pqlist[i].qu_id==id){
-        arr.push(pqlist[i]);
+      for(var j=0;j<pqlist.length;j++){
+        if (pqlist[j].type_id == loupanlist[0].id){
+          if (pqlist[j].qu_id == id) {
+            arr.push(pqlist[j]);
+          }
+        }
+       
       }
-    }
+
+    loupanlist[0].loulist=arr;
     this.Base.setMyData({
       shi:cur,
-      pqlist:arr
+      loupanlists: loupanlist
     })
   }
   todetails(e){
-    var rmlist = this.Base.getMyData().rmlist;
-    var pqlist = this.Base.getMyData().pqlist;
+    var pqlist = this.Base.getMyData().temp;
     var lujing = e.currentTarget.dataset.diwei;
 
-    if (pqlist.length>3){
+    if (pqlist[1].loulist.length>3){
       var blen = 1391;
     }else {
       var blen = 1141;
     }
-    if (rmlist.length > 3) {
+    if (pqlist[2].loulist.length > 3) {
       var clen = 1750;
     } else {
-      var clen = 1141+(118*rmlist.length);
+      var clen = 1391 + (118 * pqlist[2].loulist.length);
     }
     console.log(clen,'pp')
     console.log(e);
@@ -178,6 +200,12 @@ class Content extends AppBase {
       url: '/pages/lpdetail/lpdetail?id='+id,
     })
   }
+  huidao(){
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300,
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -194,4 +222,6 @@ body.getloupan = content.getloupan;
 body.getprice = content.getprice;
 body.todetails = content.todetails;
 body.xiangqin = content.xiangqin;
+body.huidao = content.huidao;
+body.getloutype = content.getloutype;
 Page(body)

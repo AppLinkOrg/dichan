@@ -158,6 +158,12 @@ view,navigator,input,text,textarea{
 white-space:nowrap;          /* 不换行 */
 overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内容 */
 }
+.chaochu {
+   white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+}
 .h1{
   font-size: 120rpx !important;
 }

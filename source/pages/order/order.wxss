@@ -1,1 +1,32 @@
 /* pages/order/order.wxss */
+
+.imgs {
+  width: 192rpx;
+  height: 192rpx;
+}
+
+.box {
+  width: 288rpx;
+  height: 96rpx;
+  border: 1px solid rgba(204, 204, 204, 1);
+  opacity: 1;
+  border-radius: 48rpx;
+  color: #333333;
+  line-height: 96rpx;
+  text-align: center;
+}
+
+.box2 {
+  width: 288rpx;
+  height: 96rpx;
+  background: rgba(7, 38, 74, 1);
+  opacity: 1;
+  border-radius: 48rpx;
+  color: #fff;
+  line-height: 96rpx;
+  text-align: center;
+}
+
+.margin-top-37 {
+  margin-top: 74rpx;
+}

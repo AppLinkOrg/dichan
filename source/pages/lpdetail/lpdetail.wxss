@@ -77,3 +77,19 @@
   z-index: 10;
   text-align: center;
 }
+.ding {
+  width: 100rpx;
+  height:100rpx;
+  position: fixed;
+  right: 50rpx;
+  bottom: 300rpx;
+  z-index: 10;
+}
+.ding2 {
+  width: 100rpx;
+  height:100rpx;
+  position: fixed;
+  right: 50rpx;
+  bottom: 200rpx;
+  z-index: 10;
+}

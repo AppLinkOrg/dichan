@@ -1,14 +1,21 @@
 <cu-custom bgColor="bg-4b">
   <view class="flex-row flex-center" slot="content">
-    <!-- <image src="{{uploadpath}}resource/{{res.fanhui}}" bindtap="backHome" style="width:50rpx;height:50rpx;margin-left:34rpx;"></image> -->
-    <view style="font-size:38rpx;color:#ffffff;margin-left:36rpx;">订单信息</view>
-
+    <image src="{{uploadpath}}resource/{{res.fanhui}}" bindtap="backHome" style="width:50rpx;height:50rpx;"></image>
+    <view class="flex-1"></view>
+    <view style="color:#ffffff;">订单信息</view>
+<view class="flex-1"></view>
   </view>
 
 </cu-custom>
-<view style='height:20rpx;'></view>
-<view class="flex-row flex-column">
-<view>团购成功</view>
-  <view style='height:20rpx;'></view>
-<view bindtap="backHome">返回首页</view>
+
+
+<view class="flex-row flex-column margin-top">
+      <image src="{{uploadpath}}resource/{{res.zhifu}}" class="imgs"></image>
+      <view class="margin-top-37 f-36 txt-bold">提交成功</view>
+      <view class="h26" style="color:#999999;margin: 16rpx 0 76rpx;">您已成功支付定金，请核对团购信息</view>
+      <view class="flex-row flex-center ">
+        <view class="box2" bindtap="fanhui">查看我的团购</view>
+        <view style="width:10rpx;"></view>
+        <view class="box" bindtap="backHome">返回首页</view>
+      </view>
 </view>

@@ -146,6 +146,20 @@ class Content extends AppBase {
       url: '/pages/tuangou/tuangou?id='+this.Base.options.id,
     })
   }
+  huidao(e) {
+    var cur = e.currentTarget.id;
+    if(cur=='D'){
+      wx.pageScrollTo({
+        scrollTop: 0,
+        duration: 300,
+      })
+    } else if (cur == 'H'){
+      wx.switchTab({
+        url: '/pages/home/home',
+      })
+    }
+   
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -158,4 +172,5 @@ body.hua = content.hua;
 body.douyou = content.douyou;
 body.haibao = content.haibao;
 body.tuangou = content.tuangou;
+body.huidao = content.huidao;
 Page(body)

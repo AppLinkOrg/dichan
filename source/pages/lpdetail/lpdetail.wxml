@@ -215,3 +215,6 @@
   <view style="height:100rpx;line-height:100rpx" bindtap="haibao">生成海报</view>
 </view>
 
+<image src="{{uploadpath}}resource/{{res.top}}" bindtap="huidao" id='D' class='ding'></image>
+<image src="{{uploadpath}}resource/{{res.home}}" bindtap="huidao" id='H' class='ding2'></image>
+
