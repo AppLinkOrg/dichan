@@ -8,10 +8,10 @@
 
 </cu-custom>
 
-
+<view style="height:200rpx;"></view>
 <view class="flex-row flex-column margin-top">
       <image src="{{uploadpath}}resource/{{res.zhifu}}" class="imgs"></image>
-      <view class="margin-top-37 f-36 txt-bold">提交成功</view>
+      <view class="margin-top-37 f-36 txt-bold">团购成功</view>
       <view class="h26" style="color:#999999;margin: 16rpx 0 76rpx;">您已成功支付定金，请核对团购信息</view>
       <view class="flex-row flex-center ">
         <view class="box2" bindtap="fanhui">查看我的团购</view>

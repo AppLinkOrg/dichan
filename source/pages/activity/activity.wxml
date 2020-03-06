@@ -1,5 +1,86 @@
-<!--pages/activity/activity.wxml-->
-<text>pages/activity/activity.wxml</text>
+<cu-custom bgColor="bg-4b" class="text-center">
+
+  <view slot="content" class="txt-white">
+    <view style="height:10rpx;"></view>活动</view>
+</cu-custom>
 
 
+<!-- 轮播图 -->
+<swiper class="screen-swiper square-dot" autoplay='true' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:100vw;height:380rpx;'>
+  <swiper-item wx:for="{{atlunbo}}" wx:key="k" class='text-center'>
+    <view class="bg-4b po"></view>
+    <image src='{{uploadpath}}activity/{{item.img}}' bindtap='bannerGo' id="{{item.id}}" class='dlun'></image>
+  </swiper-item>
+</swiper>
+<view style="height:26rpx;"></view>
+<!-- 版块 -->
+<scroll-view scroll-x="true" class="tab-h bg-white" scroll-left="{{scrollLeft}}">
+  <view class="tab-item h5 {{idx==shi?'bg-2f':''}} shadow" wx:for='{{types}}' wx:key="k" wx:for-index="idx" bindtap="qubind" id='{{idx}}' data-currentid='{{item.id}}'>
+    <image src="{{uploadpath}}activity/{{item.img}}" class="imgs"></image>
+    <view class="in">{{item.name}}</view>
+  </view>
+</scroll-view>
+
+<!-- 列表 -->
+<view style="height:26rpx;"></view>
+<view>
+  <view class="flex-row flex-center" style="background-image:url('{{uploadpath}}resource/{{res.lantiao}}');width:100vw;height:84rpx;background-size:100% 100%;">
+    <view class="txt-bold" style="margin-left:54rpx;font-size:42rpx;color:#3089CE;margin-right:20rpx;">近期活动列表</view>
+    <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>
+  </view>
+  <view style="height:52rpx;"></view>
+
+  <view wx:for='{{activitylist}}' wx:key='k' style="padding:0 46rpx 0 48rpx;">
+    <image src="{{uploadpath}}activity/{{item.img}}" class="iimg"></image>
+    <view class="ac">活动主题：{{item.name}}</view>
+    <view class="flex-row flex-center">
+      <view>
+        <view class="ac">活动嘉宾：{{item.jiabin}}</view>
+        <view class="ac">活动时间：{{item.shijian}}</view>
+      </view>
+      <view class="flex-1"></view>
+      <view class="bm" style="background-image:url('{{uploadpath}}resource/{{res.bm}}');background-size:100% 100%;">
+        立即报名
+      </view>
+    </view>
+    <view style="height:26rpx;"></view>
+  </view>
+
+</view>
+
+<!-- 简报 -->
+<view style="height:26rpx;"></view>
+<view>
+
+  <view class="flex-row flex-center" style="background-image:url('{{uploadpath}}resource/{{res.lantiao}}');width:100vw;height:84rpx;background-size:100% 100%;">
+    <view class="txt-bold" style="margin-left:54rpx;font-size:42rpx;color:#3089CE;margin-right:20rpx;">热门活动简报</view>
+    <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>
+  </view>
+<view style="height:46rpx;"></view>
+  <view wx:for='{{jianbao}}' wx:key='k'>
+    <view class="flex-row flex-center" style="padding:0 46rpx 0 50rpx;">
+      <view>
+        <view class="jb h6">{{item.name}}</view>
+        <view style="height:40rpx;"></view>
+        <view class="flex-row flex-center">
+          <view class="h7" style="color:#666666;">{{item.shijian}}</view>
+          <view class="flex-1"></view>
+          <view class="flex-row flex-center" wx:for='{{item.redu-0}}'>
+            <image src="{{uploadpath}}resource/{{res.hot}}" style="width:14rpx;height:20rpx;margin-right:8rpx;"></image>
+          </view>
+
+        </view>
+      </view>
+      <view class="flex-1"></view>
+
+      <image src="{{uploadpath}}activity/{{item.img}}" style="width:184rpx;height:154rpx;"></image>
+    </view>
+    <view style="height:38rpx;"></view>
+    <view style="width:100vw;height:2rpx;background:#E1E1E1;"></view>
+    <view style="height:30rpx;"></view>
+  </view>
+
+</view>
+
+<view style="height:200rpx;"></view>
 <custom-tab-bar></custom-tab-bar>

@@ -19,7 +19,7 @@
 .box2 {
   width: 288rpx;
   height: 96rpx;
-  background: rgba(7, 38, 74, 1);
+  background: #4EB1FF ;
   opacity: 1;
   border-radius: 48rpx;
   color: #fff;

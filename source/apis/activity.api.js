@@ -1,15 +1,15 @@
 /*******使用方法，下面两句复制到page的js文件的头部
 
 import { ApiConfig } from '../../apis/apiconfig';
-import { InstApi } from '../../apis/loupan.api';
+import { InstApi } from '../../apis/activity.api';
 
-var loupanApi=new LoupanApi();
+var activityApi=new ActivityApi();
 *******/
 import { ApiConfig } from 'apiconfig';
-export class LoupanApi{
+export class ActivityApi{
 
 
-    loupandetail(json, callback, showLoading = true) {
+    activitylist(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -18,7 +18,7 @@ export class LoupanApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'loupan/loupandetail',
+            url: ApiConfig.GetApiUrl() + 'activity/activitylist',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -41,7 +41,7 @@ export class LoupanApi{
         })
     }
 
-    loupanlist(json, callback, showLoading = true) {
+    atlunbo(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -50,7 +50,7 @@ export class LoupanApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'loupan/loupanlist',
+            url: ApiConfig.GetApiUrl() + 'activity/atlunbo',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -73,7 +73,7 @@ export class LoupanApi{
         })
     }
 
-    loupantype(json, callback, showLoading = true) {
+    types(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -82,7 +82,7 @@ export class LoupanApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'loupan/loupantype',
+            url: ApiConfig.GetApiUrl() + 'activity/types',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -105,7 +105,7 @@ export class LoupanApi{
         })
     }
 
-    pricerange(json, callback, showLoading = true) {
+    jianbao(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -114,7 +114,7 @@ export class LoupanApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'loupan/pricerange',
+            url: ApiConfig.GetApiUrl() + 'activity/jianbao',
             data: json,
             method: 'POST',
             dataType: 'json',
