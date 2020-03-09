@@ -1,15 +1,15 @@
 /*******使用方法，下面两句复制到page的js文件的头部
 
 import { ApiConfig } from '../../apis/apiconfig';
-import { InstApi } from '../../apis/activity.api';
+import { InstApi } from '../../apis/zixun.api';
 
-var activityApi=new ActivityApi();
+var zixunApi=new ZixunApi();
 *******/
 import { ApiConfig } from 'apiconfig';
-export class ActivityApi{
+export class ZixunApi{
 
 
-    activitylist(json, callback, showLoading = true) {
+    addpeople(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -18,7 +18,7 @@ export class ActivityApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'activity/activitylist',
+            url: ApiConfig.GetApiUrl() + 'zixun/addpeople',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -41,7 +41,7 @@ export class ActivityApi{
         })
     }
 
-    atlunbo(json, callback, showLoading = true) {
+    jianpeople(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -50,7 +50,7 @@ export class ActivityApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'activity/atlunbo',
+            url: ApiConfig.GetApiUrl() + 'zixun/jianpeople',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -73,7 +73,7 @@ export class ActivityApi{
         })
     }
 
-    jianbao(json, callback, showLoading = true) {
+    zixunlist(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -82,7 +82,7 @@ export class ActivityApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'activity/jianbao',
+            url: ApiConfig.GetApiUrl() + 'zixun/zixunlist',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -105,7 +105,7 @@ export class ActivityApi{
         })
     }
 
-    types(json, callback, showLoading = true) {
+    zixuntype(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -114,7 +114,7 @@ export class ActivityApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'activity/types',
+            url: ApiConfig.GetApiUrl() + 'zixun/zixuntype',
             data: json,
             method: 'POST',
             dataType: 'json',

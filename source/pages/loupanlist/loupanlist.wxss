@@ -1,0 +1,57 @@
+/* pages/loupanlist/loupanlist.wxss */
+.borb {
+  width: 136rpx;
+  height: 56rpx;
+  background: #E7E4E7;
+  line-height: 56rpx;
+  text-align: center;
+  margin: 22rpx 18rpx;
+  color: #666666;
+}
+.cactive2 {
+  color: #1A9BFE;
+}
+.cactive {
+  color: #333333;
+  background: #BAE3FC;
+}
+.xiala{
+  width: 100vw;
+  position: fixed;
+  top: 235rpx;
+  left: 0;
+  background: #ffffff;
+  /* text-align: center; */
+  z-index: 10;
+  border: 2rpx solid #D7D7D7;
+  margin-top: 30rpx;
+}
+.mask {
+  width: 100vw;
+  height: 1000%;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  z-index: 5;
+  background: #B4B1B4;
+    opacity: 0.5;
+}
+.chong {
+  width: 298rpx;
+  height: 56rpx;
+  text-align: center;
+  line-height: 56rpx;
+}
+.bg-e7 {
+  background: #E7E4E7;
+  color: #666666;
+}
+.bg-18 {
+  background: #189DFD;
+  color: #ffffff;
+
+}
+.aa {
+  background: #ffffff;
+  z-index: 10;
+}

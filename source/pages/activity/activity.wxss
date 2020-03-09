@@ -41,9 +41,9 @@
   height: 326rpx;
 }
 .ac {
-  font-size: 18rpx;
+  font-size: 20rpx;
   color: #666666;
-  margin-top: 12rpx;
+  margin-top: 10rpx;
 }
 .bm {
   width:130rpx;

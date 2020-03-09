@@ -1,7 +1,9 @@
 <cu-custom bgColor="bg-4b" class="text-center">
 
-  <view slot="content">壹地产</view>
+  <view slot="content" class="txt-white">
+    <view style="height:10rpx;"></view>壹地产</view>
 </cu-custom>
+
 <view class="flex-row flex-center bg-4b ">
   <view class="flex-1"></view>
   <view class="flex-row flex-center cc" bindtap='qiehuan'>
@@ -19,13 +21,14 @@
 <view class="xiala" wx:if='{{showcity==true}}'>
   <view bindtap="switchcity" data-current="{{item}}" id='{{idx}}' wx:for='{{citylist}}' wx:key='k' wx:for-index='idx' class="borb {{seq==idx?'cactive':''}}">{{item.name}}</view>
 </view>
+<view class='mask' wx:if='{{showcity==true}}' bindtap="xiaoshi"></view>
 <view class="bg-4b" style='height:20rpx'></view>
 
 <!-- 顶部轮播图 -->
 <swiper class="screen-swiper square-dot" autoplay='true' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:100vw;height:380rpx;'>
-  <swiper-item wx:for="{{indexbanner}}" wx:key="k" class='text-center'>
+  <swiper-item wx:for="{{indexbanner}}"  wx:key="k" class='text-center'>
     <view class="bg-4b po"></view>
-    <image src='{{uploadpath}}indexbanner/{{item.img}}' bindtap='bannerGo' id="{{item.id}}" class='dlun'></image>
+    <image src='{{uploadpath}}indexbanner/{{item.img}}' bindtap='lundiao' data-current='{{item}}' class='dlun'></image>
   </swiper-item>
 </swiper>
 
@@ -39,22 +42,29 @@
 </view>
 <view style="height:10rpx;"></view>
 <!-- 头条资讯 -->
-<view class="flex-row flex-center">
+<view class="flex-row flex-center" >
   <view class="flex-1"></view>
   <view class="flex-row flex-column">
     <view class="h4 txt-56 txt-bold">头条资讯</view>
-    <view class="h6 bg-56 txt-white margin-top-5" style="padding:5rpx 20rpx;border-radius:10rpx">2月13日</view>
+    <view class="h6 bg-56 txt-white margin-top-5" style="padding:5rpx 20rpx;border-radius:10rpx">{{time}}</view>
   </view>
   <view style="width:4rpx;height:90rpx;background:#56AAEF; margin:0 20rpx 0 20rpx;"></view>
-  <view class="flex-row flex-column txt-85">
-    <view class=" flex-row flex-center">
+  <view class="flex-row flex-column txt-85" >
+
+    <!-- <view class=" flex-row flex-center" >
       <view style='width:10rpx;height:10rpx;background:#56AAEF;border-radius: 50%;margin-right:10rpx'></view>
-      <view class="h6">多图揭秘，复工后的深圳长这个样子.....</view>
+      <view class="h6 chaochu" style="width:380rpx;">{{item.name}}</view>
+    </view> -->
+
+	<swiper style="width:480rpx;height:88rpx;line-height:88rpx;" autoplay='true' circular='true' vertical='true'>
+		<swiper-item wx:for='{{zixunlist}}' wx:key='k'>
+	 <view class=" flex-row flex-center" >
+      <view style='width:10rpx;height:10rpx;background:#56AAEF;border-radius: 50%;margin-right:10rpx'></view>
+      <view class="h6 chaochu" style="width:380rpx;">{{item.name}}</view>
     </view>
-    <view class=" flex-row flex-center">
-      <view style='width:10rpx;height:10rpx;background:#56AAEF;border-radius:50%;margin-right:10rpx'></view>
-      <view class="h6">多图揭秘，复工后的深圳长这个样子.....</view>
-    </view>
+		</swiper-item>
+	</swiper>
+
   </view>
   <view class="flex-1"></view>
 </view>
@@ -99,7 +109,7 @@
       </view>
     </view>
   </view>
-  <view class="text-center h5" style="color:#4082BB;" wx:if='{{loupanlists[0].loulist.length>4}}'>点击查看更多></view>
+  <view class="text-center h5" style="color:#4082BB;" wx:if='{{loupanlists[0].loulist.length>4}}' bindtap='gengduo' id='{{loupanlists[0].id}}'>点击查看更多></view>
   <view style="height:36rpx;"></view>
 </view>
 
@@ -130,7 +140,7 @@
     <view style="height:30rpx;"></view>
   </view>
 
-  <view class="text-center h5" style="color:#4082BB;" wx:if='{{item.loulist.length>3}}'>点击查看更多></view>
+  <view class="text-center h5" style="color:#4082BB;" wx:if='{{item.loulist.length>3}}'  bindtap='gengduo' id='{{item.id}}'>点击查看更多></view>
   <view style="height:36rpx;"></view>
 </view>
 

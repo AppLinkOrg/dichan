@@ -1,0 +1,99 @@
+<cu-custom bgColor="bg-4b">
+  <view class="flex-row flex-center" slot="content">
+    <image src="{{uploadpath}}resource/{{res.fanhui}}" bindtap="backHome" style="width:18rpx;height:30rpx;margin-left:34rpx;"></image>
+    <view style="font-size:38rpx;color:#ffffff;margin-left:36rpx;">楼盘列表</view>
+
+  </view>
+
+</cu-custom>
+<view style="height:20rpx;"></view>
+<view class="flex-row flex-center">
+  <view class="flex-1"></view>
+  <view class="flex-row flex-center" bindtap="diqu" id='A'>
+    <view class="{{showcity==true?'cactive2':''}}">地区</view>
+    <image src="{{uploadpath}}resource/{{res.xiala}}" wx:if='{{showcity==false}}' style="width:22rpx;height:18rpx;margin-left:6rpx;margin-top:6rpx;"></image>
+    <image src="{{uploadpath}}resource/{{res.xiala2}}" wx:if='{{showcity==true}}' style="width:22rpx;height:18rpx;margin-left:6rpx;margin-top:6rpx;"></image>
+  </view>
+
+  <view class="flex-1"></view>
+  <view class="flex-row flex-center" bindtap="diqu" id='B'>
+    <view class="{{showprice==true?'cactive2':''}}">价格</view>
+    <image src="{{uploadpath}}resource/{{res.xiala}}" wx:if='{{showprice==false}}' style="width:22rpx;height:18rpx;margin-left:6rpx;margin-top:6rpx;"></image>
+    <image src="{{uploadpath}}resource/{{res.xiala2}}" wx:if='{{showprice==true}}' style="width:22rpx;height:18rpx;margin-left:6rpx;margin-top:6rpx;"></image>
+  </view>
+
+  <view class="flex-1"></view>
+</view>
+<view style="height:28rpx;"></view>
+<view style="height:2rpx;width:100vw;background:#D7D7D7;"></view>
+<view style="height:28rpx;"></view>
+
+
+
+<view class="xiala" wx:if='{{showcity==true}}'>
+
+  <view class=" flex-row flex-wrap" style="padding:0 28rpx;">
+    <view bindtap="switchcity" data-current="{{item.id}}" id='{{idx}}' wx:for='{{citydetail.shiqu}}' wx:key='k' wx:for-index='idx' class="borb h6 {{seq==idx?'cactive':''}}">
+
+      {{item.name}}
+
+    </view>
+  </view>
+<view style="height:2rpx;width:100vw;background:#D7D7D7;"></view>
+<view style="height:16rpx;"></view>
+  <view class="flex-row flex-center">
+    <view class="flex-1"></view>
+    <view class="chong bg-e7" bindtap="reset">重置</view>
+    <view class="flex-1"></view>
+    <view class="chong bg-18" bindtap="queren">确认</view> 
+    <view class="flex-1"></view>
+  </view>
+  <view style="height:16rpx;"></view>
+</view>
+
+
+
+<view class="xiala" wx:if='{{showprice==true}}'>
+<view class="flex-row flex-wrap" style="padding:0 28rpx;"> 
+  <view bindtap="switchprice" data-current="{{item.id}}" id='{{idx}}' wx:for='{{shax}}' wx:key='k' wx:for-index='idx' class="borb h6 {{seq1==idx?'cactive':''}}">{{item.name}}</view>
+  </view>
+
+<view style="height:2rpx;width:100vw;background:#D7D7D7;"></view>
+<view style="height:16rpx;"></view>
+  <view class="flex-row flex-center">
+    <view class="flex-1"></view>
+    <view class="chong bg-e7" bindtap="reset2">重置</view>
+    <view class="flex-1"></view>
+    <view class="chong bg-18" bindtap="queren2">确认</view> 
+    <view class="flex-1"></view>
+  </view>
+  <view style="height:16rpx;"></view>
+
+
+</view>
+
+
+
+
+
+<view class='mask' wx:if='{{showprice==true || showcity==true}}' bindtap="xiaoshi"></view>
+
+
+
+
+
+<view wx:for='{{loupanlist}}' wx:key='k'>
+  <view class="flex-row flex-center" style='padding-left: 30rpx;' bindtap="todetail" id='{{item.id}}'>
+    <image src="{{uploadpath}}loupan/{{item.img}}" style="width:200rpx;height:182rpx;"></image>
+    <view style="margin-left:28rpx;">
+      <view class="h4-5 " style="color:#333333;">{{item.name}}</view>
+      <view style="height:20rpx;"></view>
+      <view class="" style="font-size:26rpx;color:#666666;">{{item.cityqu_name}}</view>
+      <view style="font-size:26rpx;color:#999999;margin:10rpx 0 12rpx;">{{item.xinxi}}</view>
+      <view class="h4-5" style="color:#ED4949">{{item.prices}}元/㎡</view>
+    </view>
+  </view>
+  <view style="height:28rpx;"></view>
+  <view style="height:2rpx;width:100vw;background:#D7D7D7;"></view>
+  <view style="height:28rpx;"></view>
+</view>

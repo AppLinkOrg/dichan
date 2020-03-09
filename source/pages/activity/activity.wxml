@@ -60,12 +60,12 @@
   <view wx:for='{{jianbao}}' wx:key='k'>
     <view class="flex-row flex-center" style="padding:0 46rpx 0 50rpx;">
       <view>
-        <view class="jb h6">{{item.name}}</view>
+        <view class="jb h5">{{item.name}}</view>
         <view style="height:40rpx;"></view>
         <view class="flex-row flex-center">
           <view class="h7" style="color:#666666;">{{item.shijian}}</view>
           <view class="flex-1"></view>
-          <view class="flex-row flex-center" wx:for='{{item.redu-0}}'>
+          <view class="flex-row flex-center" wx:for='{{item.redu-0}}' wx:key='k'>
             <image src="{{uploadpath}}resource/{{res.hot}}" style="width:14rpx;height:20rpx;margin-right:8rpx;"></image>
           </view>
 

@@ -1,5 +1,41 @@
-<!--pages/zixun/zixun.wxml-->
-<text>pages/zixun/zixun.wxml</text>
+<cu-custom bgColor="bg-4b" class="text-center">
+
+  <view slot="content" class="txt-white">
+    <view style="height:10rpx;"></view>资讯</view>
+</cu-custom>
+
+
+<scroll-view scroll-x="true" class="tab-h bg-white" scroll-left="{{scrollLeft}}">
+  <view wx:for='{{zixuntype}}' wx:key='k' wx:for-index='idx' bindtap="xuanrange" id='{{idx}}' data-current="{{item.id}}" class="h5 tab-item  {{seq==idx?'active':''}} flex-row flex-column" style='margin:0 25rpx 10rpx;'>
+    <view>{{item.name}}</view>
+    <view class="{{seq==idx?'acliine':''}}"></view>
+  </view>
+
+</scroll-view>
+
+
+<view wx:for='{{zixunlist}}' wx:key='k' style="padding:0 20rpx 0 32rpx;" bindtap="todetail" id='{{item.id}}'>
+
+  <view class="flex-row flex-center">
+    <view style="width:232rpx;height:158rpx;">
+      <image src="{{uploadpath}}zixun/{{item.img}}" style="width:100%;height:100%;"></image>
+    </view>
+
+    <view style="margin-left:10rpx;width:464rpx;">
+      <view class="h4-5" style="color:#000000;">{{item.name}}</view>
+      <view style="height:24rpx;"></view>
+      <view class="flex-row flex-center">
+        <view class="h6" style="color:#8A8A8A;">{{item.shijian}}</view>
+        <view class="flex-1"></view>
+        <view class="h6" style="color:#8A8A8A;">{{item.people}}人浏览</view>
+      </view>
+    </view>
+
+  </view>
+  <view style="height:38rpx;"></view>
+
+</view>
+
 
 
 <custom-tab-bar></custom-tab-bar>

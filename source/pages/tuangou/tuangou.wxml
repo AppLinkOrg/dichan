@@ -1,6 +1,6 @@
 <cu-custom bgColor="bg-4b">
   <view class="flex-row flex-center" slot="content">
-    <image src="{{uploadpath}}resource/{{res.fanhui}}" bindtap="backHome" style="width:50rpx;height:50rpx;margin-left:34rpx;"></image>
+    <image src="{{uploadpath}}resource/{{res.fanhui}}" bindtap="backHome" style="width:18rpx;height:30rpx;margin-left:34rpx;"></image>
     <view style="font-size:38rpx;color:#ffffff;margin-left:36rpx;">团购</view>
 
   </view>

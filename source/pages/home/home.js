@@ -5,6 +5,7 @@ import { InstApi } from "../../apis/inst.api.js";
 import { CityApi } from "../../apis/city.api.js";
 import { MemberApi } from "../../apis/member.api.js";
 import { LoupanApi } from "../../apis/loupan.api.js";
+import { ZixunApi } from "../../apis/zixun.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -30,10 +31,16 @@ class Content extends AppBase {
     })
   }
   onMyShow() {
+    var today = new Date();
+    var mon = today.getMonth()+1;
+    var day = today.getDate();
+    var time = mon+"月"+day+"日";
+    console.log(time)
     var that = this;
     this.Base.setMyData({
       shi: null,
-      range:null
+      range:null,
+      time
     })
     this.getloutype();
     this.getcity();
@@ -41,6 +48,7 @@ class Content extends AppBase {
     this.getbanner();
     this.getlunbo();
     this.getprice();
+    this.getzixun();
    
   }
   getloutype(){
@@ -114,6 +122,32 @@ class Content extends AppBase {
         temp: loupanlist
       })
     })
+  }
+  getzixun(){
+    var api = new ZixunApi;
+    var that = this;
+    var arr = [];
+    api.zixunlist({}, (zixunlist)=>{
+      for(var i=0;i<zixunlist.length;i++){
+        zixunlist[i].shijian = that.gettiyue(zixunlist[i].shijian_timespan);
+        if (that.gettiyue(zixunlist[i].shijian_timespan)){
+          arr.push(zixunlist[i]);
+        }
+      }
+      this.Base.setMyData({ zixunlist:arr})
+    })
+  }
+  gettiyue(date){
+    var today = new Date().getTime();
+    console.log(today)
+    console.log(date+'000')
+    var date = date+'000';
+    console.log(Number(date) > today)
+    if (Number(date)>today){
+      return true 
+    }else {
+      return false 
+    }
   }
   qiehuan(){
     var showcity = this.Base.getMyData().showcity;
@@ -213,6 +247,10 @@ class Content extends AppBase {
         scrollTop: clen,
         duration: 300,
       })
+    }else if(lujing.indexOf('activity')>-1) {
+      wx.switchTab({
+        url: '/' + lujing,
+      })
     }
   }
   xiangqin(e){
@@ -266,6 +304,27 @@ class Content extends AppBase {
       rangeid:id
     })
   }
+  lundiao(e){
+    var item  = e.currentTarget.dataset.current;
+    console.log(item);
+    if (item.leixing=='D'){
+      wx.navigateTo({
+        url: '/' + item.lujing + '?id=' + item.loupan_id,
+      })
+    }
+  }
+  gengduo(e){
+    var id =e.currentTarget.id;
+    var currentcity=this.Base.getMyData().currentcity;
+    wx.navigateTo({
+      url: '/pages/loupanlist/loupanlist?id=' + id + '&city_id='+currentcity.id,
+    })
+  }
+  xiaoshi() {
+    this.Base.setMyData({
+      showcity: false,
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -285,4 +344,9 @@ body.xiangqin = content.xiangqin;
 body.huidao = content.huidao;
 body.getloutype = content.getloutype;
 body.xuanrange = content.xuanrange;
+body.lundiao = content.lundiao;
+body.getzixun = content.getzixun;
+body.gettiyue = content.gettiyue;
+body.gengduo = content.gengduo;
+body.xiaoshi = content.xiaoshi;
 Page(body)

@@ -9,7 +9,9 @@
     "pages/lpdetail/lpdetail",
     "pages/haibao/haibao",
     "pages/tuangou/tuangou",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/loupanlist/loupanlist",
+    "pages/zixundetail/zixundetail"
   ],
   "permission": {
     "scope.userLocation": {
@@ -19,8 +21,8 @@
   "window": {
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": true,
-    "navigationBarBackgroundColor": "#FFFFFF",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#4EB1FF",
+    "navigationBarTextStyle": "white"
   },
    "tabBar": {
     "color": "#bfbfbf",
@@ -32,42 +34,42 @@
       {
         "text": "首页",
         "pagePath": "pages/home/home",
-        "iconPath": "images/icons/d.png",
-        "selectedIconPath": "images/icons/d-d.png",
-        "img1": "images/icons/d.png",
-        "img2": "images/icons/d-d.png"
+        "iconPath": "images/icons/h.png",
+        "selectedIconPath": "images/icons/h-h.png",
+        "img1": "images/icons/h.png",
+        "img2": "images/icons/h-h.png"
       },
         {
           "text": "活动",
           "pagePath": "pages/activity/activity",
-          "iconPath": "images/icons/d.png",
-          "selectedIconPath": "images/icons/d-d.png",
-          "img1": "images/icons/d.png",
-          "img2": "images/icons/d-d.png"
+          "iconPath": "images/icons/s.png",
+          "selectedIconPath": "images/icons/s-s.png",
+          "img1": "images/icons/s.png",
+          "img2": "images/icons/s-s.png"
         },
         {
           "text": "问答",
           "pagePath": "pages/wenda/wenda",
-          "iconPath": "images/icons/d.png",
-          "selectedIconPath": "images/icons/d-d.png",
-          "img1": "images/icons/d.png",
-          "img2": "images/icons/d-d.png"
+          "iconPath": "images/icons/w.png",
+          "selectedIconPath": "images/icons/w-w.png",
+          "img1": "images/icons/w.png",
+          "img2": "images/icons/w-w.png"
         },
         {
-          "text": "咨询",
+          "text": "资讯",
           "pagePath": "pages/zixun/zixun",
-          "iconPath": "images/icons/d.png",
-          "selectedIconPath": "images/icons/d-d.png",
-          "img1": "images/icons/d.png",
-          "img2": "images/icons/d-d.png"
+          "iconPath": "images/icons/x.png",
+          "selectedIconPath": "images/icons/x-x.png",
+          "img1": "images/icons/x.png",
+          "img2": "images/icons/x-x.png"
         },
       {
         "text": "我的",
         "pagePath": "pages/my/my",
-        "iconPath": "images/icons/c.png",
-        "selectedIconPath": "images/icons/c-c.png",
-        "img1": "images/icons/c.png",
-        "img2": "images/icons/c-c.png"
+        "iconPath": "images/icons/m.png",
+        "selectedIconPath": "images/icons/m-m.png",
+        "img1": "images/icons/m.png",
+        "img2": "images/icons/m-m.png"
       }
     ]
   },

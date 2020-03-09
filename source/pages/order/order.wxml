@@ -1,6 +1,6 @@
 <cu-custom bgColor="bg-4b">
   <view class="flex-row flex-center" slot="content">
-    <image src="{{uploadpath}}resource/{{res.fanhui}}" bindtap="backHome" style="width:50rpx;height:50rpx;"></image>
+    <image src="{{uploadpath}}resource/{{res.fanhui}}" bindtap="backHome" style="width:18rpx;height:30rpx;"></image>
     <view class="flex-1"></view>
     <view style="color:#ffffff;">订单信息</view>
 <view class="flex-1"></view>
