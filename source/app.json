@@ -11,7 +11,9 @@
     "pages/tuangou/tuangou",
     "pages/order/order",
     "pages/loupanlist/loupanlist",
-    "pages/zixundetail/zixundetail"
+    "pages/zixundetail/zixundetail",
+    "pages/zhuanjiapl/zhuanjiapl",
+    "pages/zhibo/zhibo"
   ],
   "permission": {
     "scope.userLocation": {

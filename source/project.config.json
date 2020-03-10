@@ -102,6 +102,20 @@
 					"id": -1,
 					"name": "pages/zixun/zixun",
 					"pathName": "pages/zixun/zixun",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/zhuanjiapl/zhuanjiapl",
+					"pathName": "pages/zhuanjiapl/zhuanjiapl",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/zhibo/zhibo",
+					"pathName": "pages/zhibo/zhibo",
 					"scene": null
 				}
 			]

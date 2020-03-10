@@ -134,7 +134,7 @@ class Content extends AppBase {
           arr.push(zixunlist[i]);
         }
       }
-      this.Base.setMyData({ zixunlist:arr})
+      this.Base.setMyData({ zixunlist})
     })
   }
   gettiyue(date){

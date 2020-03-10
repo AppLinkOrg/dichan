@@ -1,0 +1,25 @@
+/* pages/zhibo/zhibo.wxss */
+.dlun {
+  width: 93%;
+  height: 342rpx;
+  border-radius: 20rpx;
+  z-index: 3;
+  /* position: relative;
+  top: -198rpx; */
+}
+.send{
+  /* width: 100vw; */
+  height: 50rpx;
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  background: #ffffff;
+}
+.mask {
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}

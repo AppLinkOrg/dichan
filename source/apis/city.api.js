@@ -9,7 +9,7 @@ import { ApiConfig } from 'apiconfig';
 export class CityApi{
 
 
-    citylist(json, callback, showLoading = true) {
+    citydetail(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -18,7 +18,7 @@ export class CityApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'city/citylist',
+            url: ApiConfig.GetApiUrl() + 'city/citydetail',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -41,7 +41,7 @@ export class CityApi{
         })
     }
 
-    citydetail(json, callback, showLoading = true) {
+    citylist(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -50,7 +50,7 @@ export class CityApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'city/citydetail',
+            url: ApiConfig.GetApiUrl() + 'city/citylist',
             data: json,
             method: 'POST',
             dataType: 'json',

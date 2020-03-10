@@ -64,6 +64,13 @@ class Content extends AppBase {
       })
     })
   }
+  qubind(e){
+    console.log(e)
+    var lujing = e.currentTarget.dataset.lujing;
+    wx.navigateTo({
+      url: lujing,
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -74,4 +81,5 @@ body.gettypes = content.gettypes;
 body.getlist = content.getlist;
 body.changtime = content.changtime;
 body.getjb = content.getjb;
+body.qubind = content.qubind;
 Page(body)

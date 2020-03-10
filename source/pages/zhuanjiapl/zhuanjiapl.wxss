@@ -1,0 +1,23 @@
+/* pages/zhuanjiapl/zhuanjiapl.wxss */
+.dlun {
+  width: 93%;
+  height: 342rpx;
+  border-radius: 20rpx;
+  z-index: 3;
+  /* position: relative;
+  top: -198rpx; */
+}
+.sj {
+  font-size: 22rpx;
+  color: #999999;
+}
+.bm {
+  width: 120rpx;
+  height: 50rpx;
+  font-size: 22rpx;
+  color: #ffffff;
+  background: #31B0EB;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 46rpx;
+}

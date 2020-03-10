@@ -223,9 +223,10 @@ export class AppBase {
                 //this.loadtabtype();
 
 
-                memberapi.update(AppBase.UserInfo, () => {
+                memberapi.update(AppBase.UserInfo, (update) => {
 
                   console.log(AppBase.UserInfo);
+                  console.log(update);
                   that.Base.setMyData({
                     UserInfo: AppBase.UserInfo
                   });
@@ -292,7 +293,8 @@ export class AppBase {
     var memberapi = new MemberApi();
     var that = this;
     memberapi.info({}, (info) => {
-      if (info == null && this.Base.needauth == true) {
+      // if (info == null && this.Base.needauth == true) {
+      if (info == null ) {
         wx.navigateTo({
           url: '/pages/auth/auth',
         })
