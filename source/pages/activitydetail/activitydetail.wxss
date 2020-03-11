@@ -1,0 +1,27 @@
+/* pages/activitydetail/activitydetail.wxss */
+.nostyle view,navigator,input,text,textarea{
+  color:#777777;
+  font-size:unset;
+  
+  word-break: normal;
+  background: #ffffff;
+}
+
+
+.po {
+  width: 100vw;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  background: #ffffff;
+}
+.btns {
+  width: 236rpx;
+  height: 60rpx;
+  background: #39A9FF;
+  color: #ffffff;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+}

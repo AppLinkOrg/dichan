@@ -1,0 +1,68 @@
+/* pages/actbaomin/actbaomin.wxss */
+.xixin {
+  width: 100vw;
+  height: 88rpx;
+  padding-left:38rpx;
+  border-bottom: 1rpx solid #E5E1E1;
+}
+.xixin2{
+  width: 100vw;
+  height: 88rpx;
+  padding-left:38rpx;
+}
+.kehu {
+  color: #333333;
+  margin-left: 10rpx;
+}
+.wh {
+  width: 100vw;
+  height:110rpx;
+  padding-left:38rpx;
+  padding-right: 36rpx;
+  border-bottom: 1rpx solid #E5E1E1;
+}
+.xin {
+  font-size: 30rpx;
+  color: #666666;
+
+}
+.shenfen {
+  width: 328rpx;
+  height: 222rpx;
+  position: relative;
+}
+.fen2 {
+  width: 300rpx;
+  height: 164rpx;
+  position: absolute;
+  top: 28rpx;
+  left: 14rpx;
+}
+.fen3{
+  width: 122rpx;
+  height: 98rpx;
+  position: absolute;
+  top: 62rpx;
+  left:103rpx;
+  z-index: 10;
+}
+.bobt {
+  width: 100vw;
+  height: 146rpx;
+  line-height: 139rpx;
+  position: fixed;
+  bottom: 0;
+}
+.dijin {
+  width: 50%;
+  height: 100%;
+  font-size: 32rpx;
+  color: #3B9EEB;
+
+}
+.queren {
+  width: 50%;
+  height: 100%;
+  font-size: 32rpx;
+  color: #ffffff;
+}

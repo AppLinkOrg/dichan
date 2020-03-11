@@ -1,0 +1,33 @@
+
+<!-- 轮播图 -->
+<view style="height:42rpx;"></view>
+<swiper class="screen-swiper square-dot" autoplay='true' interval='5000' duration='200' current="{{indexcurrent}}" circular='true' style='width:100vw;height:380rpx;'>
+  <swiper-item wx:for="{{atlunbo}}" wx:key="k" class='text-center'>
+    <!-- <view class="bg-4b po"></view> -->
+    <image src='{{uploadpath}}activity/{{item.img}}' bindtap='bannerGo' id="{{item.id}}" class='dlun'></image>
+  </swiper-item>
+</swiper>
+
+
+<view style="padding:0 32rpx 0 28rpx;">
+
+  <view class="f-36" style="color:#333333;">近期活动</view>
+  <view style="height:24rpx;"></view>
+  <view wx:for='{{shalongac}}' wx:key='k'>
+    <image src="{{uploadpath}}zhuanjia/{{item.img}}" style="width:686rpx;height:268rpx;"></image>
+    <view style="height:52rpx;"></view>
+  </view>
+
+</view>
+
+<view style="padding:0 32rpx 0 28rpx;" wx:for='{{shalong}}' wx:key='k'>
+  <view wx:if='{{item.hg_value=="Y"}}'>
+    <view class="f-36" style="color:#333333;">活动回顾</view>
+    <view style="height:24rpx;"></view>
+    <!-- <video wx:if='{{item.shipin!=""}}' src="{{uploadpath}}zhibo/{{item.shipin}}" style="width:686rpx;height:268rpx;"></video> -->
+    <image src="{{uploadpath}}shalong/{{item.huigu}}" style="width:686rpx;height:268rpx;"></image>
+    <view style="height:52rpx;"></view>
+  </view>
+
+
+</view>

@@ -21,20 +21,20 @@ class Content extends AppBase {
     var api = new ActivityApi;
     api.typedetail({ id: this.Base.options.id }, (typedetail) => {
       var atlunbo = typedetail.lunbo;
-      var zhuanjiaac = typedetail.recentac;
+      var shalongac = typedetail.recentac;
       this.Base.setMyData({
-        atlunbo, zhuanjiaac
+        atlunbo, shalongac
       })
     })
   }
   setPageTitle(instinfo) {
     wx.setNavigationBarTitle({
-      title: '专家论坛',
+      title: '沙龙点评',
     })
   }
   getlunbo() {
     var api = new ActivityApi;
-    var arr =[];
+    var arr = [];
     var that = this;
     api.atlunbo({}, (atlunbo) => {
       for (var i = 0; i < atlunbo.length; i++) {
@@ -46,23 +46,23 @@ class Content extends AppBase {
 
       }
       this.Base.setMyData({
-        atlunbo:arr
+        atlunbo: arr
       })
     })
   }
-  getjinqi(){
+  getjinqi() {
     var api = new ActivityApi();
-    api.zhuanjiaac({ type:'A'}, (zhuanjiaac) => {
+    api.shalongac({ type: 'A' }, (shalongac) => {
       this.Base.setMyData({
-        zhuanjiaac
+        shalongac
       })
     })
   }
-  getinfo(){
+  getinfo() {
     var api = new ActivityApi();
-    api.zhuanjia({ type:'A'}, (zhuanjia) => {
+    api.shalong({ type: 'A' }, (shalong) => {
       this.Base.setMyData({
-        zhuanjia
+        shalong
       })
     })
   }

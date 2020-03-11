@@ -19,10 +19,17 @@ class Content extends AppBase {
   }
   onMyShow() {
     var that = this;
-    this.getlunbo();
+    // this.getlunbo();
     this.getinfo();
     this.getliuyan();
     console.log(AppBase.UserInfo,'iiii')
+    var api = new ActivityApi;
+    api.typedetail({id:this.Base.options.id}, (typedetail)=>{
+      var atlunbo = typedetail.lunbo;
+      this.Base.setMyData({
+        atlunbo
+      })
+    })
   }
   setPageTitle(instinfo) {
     wx.setNavigationBarTitle({
@@ -31,9 +38,19 @@ class Content extends AppBase {
   }
   getlunbo() {
     var api = new ActivityApi;
+    var arr =[];
+    var that = this;
     api.atlunbo({}, (atlunbo) => {
+      for (var i = 0; i < atlunbo.length; i++) {
+        for (var j = 0; j < atlunbo[i].lunbo.length;j++){
+          if (atlunbo[i].lunbo[j].id==that.Base.options.id) {
+            arr.push(atlunbo[i]);
+          }
+        }
+       
+      }
       this.Base.setMyData({
-        atlunbo
+        atlunbo:arr
       })
     })
   }

@@ -1,0 +1,43 @@
+<view>
+  <image src="{{uploadpath}}activity/{{activitydetail.img}}" style="width:100vw;height:344rpx;"></image>
+  <view style="height:20rpx;"></view>
+
+
+  <view style="padding:0 28rpx 0 36rpx;">
+    <view class="h4-5 txt-black">{{activitydetail.name}}</view>
+    <view style="height:38rpx;"></view>
+    <view class="h5" style="color:#787979;">活动时间：{{activitydetail.shijian}}</view>
+    <view style="height:38rpx;"></view>
+    <view class="h5" style="color:#787979;">地点：{{activitydetail.didian}}</view>
+    <view style="height:38rpx;"></view>
+    <view class="h5" style="color:#787979;">费用：{{activitydetail.money}}</view>
+  </view>
+  <view style="height:54rpx;"></view>
+
+  <view style="padding:0 26rpx 0 24rpx;">
+    <view class="h4-5 txt-black">活动详情</view>
+    <view style="height:20rpx"></view>
+
+    <import src="../../wxParse/wxParse.wxml" />
+
+    <view class='nostyle '>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+
+
+  </view>
+</view>
+
+<view style="height:100rpx;"></view>
+
+<view class="flex-row flex-center po">
+  <view class="flex-1"></view>
+  <view class="h6" style="color:#787979;">咨询</view>
+  <view class="flex-1"></view>
+  <view class="h6" style="color:#787979;">分享</view>
+  <view class="flex-1"></view>
+  <view class="h6" style="color:#787979;">收藏</view>
+  <view class="flex-1"></view>
+  <view class="btns h5" bindtap="baomin">立即报名</view>
+  <view class="flex-1"></view>
+</view>

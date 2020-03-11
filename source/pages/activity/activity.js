@@ -22,7 +22,8 @@ class Content extends AppBase {
   }
   getlunbo(){
     var api = new ActivityApi;
-    api.atlunbo({}, (atlunbo)=>{
+    var arr = [];
+    api.atlunbo({ }, (atlunbo)=>{
       this.Base.setMyData({
         atlunbo
       })
@@ -67,8 +68,15 @@ class Content extends AppBase {
   qubind(e){
     console.log(e)
     var lujing = e.currentTarget.dataset.lujing;
+    var id = e.currentTarget.dataset.currentid;
     wx.navigateTo({
-      url: lujing,
+      url: lujing+'?id='+id,
+    })
+  }
+  todetail(e){
+    var id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/activitydetail/activitydetail?id='+id,
     })
   }
 }
@@ -82,4 +90,5 @@ body.getlist = content.getlist;
 body.changtime = content.changtime;
 body.getjb = content.getjb;
 body.qubind = content.qubind;
+body.todetail = content.todetail;
 Page(body)

@@ -1,2 +1,32 @@
-<!--pages/zixundetail/zixundetail.wxml-->
-<text>pages/zixundetail/zixundetail.wxml</text>
+
+
+<view style="padding:0 28rpx 0 26rpx;">
+<view style="height:28rpx;"></view>
+  <view class="h4-5" style="color:#000000;">{{zixundetail.name}}</view>
+
+  <view class="flex-row flex-center" style="margin:16rpx 0 32rpx;">
+    <view class="h6" style="color:#8A8A8A;">{{zixundetail.shijian}}</view>
+    <view class="h6" style="color:#8A8A8A;">来源：{{zixundetail.laiyuan}}</view>
+  </view>
+
+  <image src="{{uploadpath}}zixun/{{zixundetail.img}}" style="width:684rpx;height:314rpx;"></image>
+  <view style="height:32rpx;"></view>
+
+  <import src="../../wxParse/wxParse.wxml" />
+
+  <view class='nostyle '>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+
+
+  <view style="height:40rpx;"></view>
+
+
+  <view class='flex-row flex-center'>
+    <view class="h6" style="color:#8A8A8A;">{{zixundetail.people}}人浏览</view>
+    <view class="flex-1"></view>
+    <view class="h6" style="color:#101010;">分享</view>
+
+  </view>
+
+</view  >

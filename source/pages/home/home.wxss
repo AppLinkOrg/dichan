@@ -54,7 +54,7 @@
   height: 200rpx;
 }
 .txt-56 {
-  color: #56AAEF;
+  color: #24AAFF;
 }
 .bg-56 {
   background:#56AAEF;
@@ -127,4 +127,9 @@
 .in {
   color:#2F89CC;
   /* height: 30rpx; */
+}
+.bq {
+  color:#0D0D0D;
+  padding:6rpx 10rpx 4rpx;
+  margin-right:20rpx;
 }

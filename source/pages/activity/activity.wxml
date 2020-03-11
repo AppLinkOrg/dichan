@@ -30,7 +30,7 @@
   </view>
   <view style="height:52rpx;"></view>
 
-  <view wx:for='{{activitylist}}' wx:key='k' style="padding:0 46rpx 0 48rpx;">
+  <view wx:for='{{activitylist}}' wx:key='k' style="padding:0 46rpx 0 48rpx;" bindtap="todetail" id='{{item.id}}' >
     <image src="{{uploadpath}}activity/{{item.img}}" class="iimg"></image>
     <view class="ac">活动主题：{{item.name}}</view>
     <view class="flex-row flex-center">

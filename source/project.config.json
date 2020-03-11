@@ -116,6 +116,27 @@
 					"id": -1,
 					"name": "pages/zhibo/zhibo",
 					"pathName": "pages/zhibo/zhibo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/zixundetail/zixundetail",
+					"pathName": "pages/zixundetail/zixundetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activitydetail/activitydetail",
+					"pathName": "pages/activitydetail/activitydetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/actbaomin/actbaomin",
+					"pathName": "pages/actbaomin/actbaomin",
 					"scene": null
 				}
 			]

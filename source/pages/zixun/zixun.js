@@ -3,6 +3,7 @@ import { AppBase } from "../../appbase";
 import { ApiConfig } from "../../apis/apiconfig";
 import { InstApi } from "../../apis/inst.api.js";
 import { ZixunApi } from "../../apis/zixun.api.js";
+import { MemberApi } from "../../apis/member.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -12,7 +13,7 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
-    this.Base.setMyData({ seq:0})
+    this.Base.setMyData({ seq:0,type_id: 0})
   }
   onMyShow() {
     var that = this;
@@ -60,8 +61,15 @@ class Content extends AppBase {
   todetail(e){
     var id = e.currentTarget.id;
     var api = new ZixunApi;
-    api.addpeople({ id: id }, (addpeople)=>{
+    var memberapi = new MemberApi;
+    var that = this;
+    api.addpeople({ id: id,member_id:this.Base.getMyData().memberinfo.id }, (addpeople)=>{
       if (addpeople){
+        if (addpeople.code=='0'){
+          memberapi.liulan({ zixun_id: id, member_id: that.Base.getMyData().memberinfo.id }, (liulan)=>{
+            
+          })
+        }
         wx.navigateTo({
           url: '/pages/zixundetail/zixundetail?id='+id,
         })

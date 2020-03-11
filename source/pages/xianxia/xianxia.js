@@ -29,12 +29,12 @@ class Content extends AppBase {
   }
   setPageTitle(instinfo) {
     wx.setNavigationBarTitle({
-      title: '专家论坛',
+      title: '线下看房',
     })
   }
   getlunbo() {
     var api = new ActivityApi;
-    var arr =[];
+    var arr = [];
     var that = this;
     api.atlunbo({}, (atlunbo) => {
       for (var i = 0; i < atlunbo.length; i++) {
@@ -50,17 +50,17 @@ class Content extends AppBase {
       })
     })
   }
-  getjinqi(){
-    var api = new ActivityApi();
-    api.zhuanjiaac({ type:'A'}, (zhuanjiaac) => {
+  getjinqi() {
+    var api = new ActivityApi;
+    api.zhuanjiaac({ type: 'B'}, (zhuanjiaac) => {
       this.Base.setMyData({
         zhuanjiaac
       })
     })
   }
-  getinfo(){
-    var api = new ActivityApi();
-    api.zhuanjia({ type:'A'}, (zhuanjia) => {
+  getinfo() {
+    var api = new ActivityApi;
+    api.zhuanjia({ type: 'B'}, (zhuanjia) => {
       this.Base.setMyData({
         zhuanjia
       })

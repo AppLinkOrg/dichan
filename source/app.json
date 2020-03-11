@@ -13,7 +13,13 @@
     "pages/loupanlist/loupanlist",
     "pages/zixundetail/zixundetail",
     "pages/zhuanjiapl/zhuanjiapl",
-    "pages/zhibo/zhibo"
+    "pages/zhibo/zhibo",
+    "pages/xianxia/xianxia",
+    "pages/fensi/fensi",
+    "pages/shalong/shalong",
+    "pages/meiti/meiti",
+    "pages/activitydetail/activitydetail",
+    "pages/actbaomin/actbaomin"
   ],
   "permission": {
     "scope.userLocation": {

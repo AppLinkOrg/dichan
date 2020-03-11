@@ -1,0 +1,57 @@
+<cu-custom bgColor="bg-4b">
+  <view class="flex-row flex-center" slot="content">
+    <image src="{{uploadpath}}resource/{{res.fanhui}}" bindtap="backPage" style="width:18rpx;height:30rpx;margin-left:34rpx;"></image>
+    <view style="font-size:38rpx;color:#ffffff;margin-left:36rpx;">报名</view>
+
+  </view>
+
+</cu-custom>
+
+
+
+<!-- 楼盘信息 -->
+
+<view class="flex-row flex-center" style='padding:30rpx 0 0 30rpx;'>
+  <image src="{{uploadpath}}activity/{{activitydetail.img}}" style="width:232rpx;height:182rpx;"></image>
+  <view style="margin-left:28rpx;">
+      <view class="h4-5 " style="color:#333333;">{{activitydetail.name}}</view>
+      <view style="height:20rpx;"></view>
+      <view class="h6" style="olor:#8A8A8A;margin:10rpx 0 12rpx;">{{activitydetail.jianjie}}</view>
+      <view class="h6" style="color:#8A8A8A;">{{activitydetail.shijian}}</view>
+  </view>
+</view>
+<view style="height:26rpx;"></view>
+<view style="width:100vw;height:8rpx;background:#E5E1E1;"></view>
+
+<view>
+    <view class='xixin flex-row flex-center'>
+      <image src="{{uploadpath}}resource/{{res.xinxi}}" style="width:8rpx;height:30rpx;"></image>
+      <view class="kehu h4-5 ">报名信息</view>
+    </view>
+
+    <view class="wh flex-row flex-center">
+        <view class="xin">姓名：</view>
+        <view class="flex-1"></view>
+        <input class="text-right" type="text" placeholder="请输入姓名" placeholder-style="color:#666666;" bindinput="nameFn" style="font-size:30rpx;"></input>
+        <view style="width:22rpx;"></view>
+        <image src="{{uploadpath}}resource/{{res.shuru}}" style="width:12rpx;height:32rpx;"></image>
+    </view>
+
+      <view class="wh flex-row flex-center">
+        <view class="xin">电话：</view>
+        <view class="flex-1"></view>
+        <input class="text-right" type="text" placeholder="请输入电话" placeholder-style="color:#666666;"  bindinput="mobileFn" style="font-size:30rpx;"></input>
+        <view style="width:22rpx;"></view>
+        <image src="{{uploadpath}}resource/{{res.shuru}}" style="width:12rpx;height:32rpx;"></image>
+    </view>
+
+
+   
+</view>
+
+<view style='height:200rpx;'></view>
+
+<view class="flex-row flex-center bobt text-center bg-white">
+  <view class="dijin">费用：{{activitydetail.money}}</view>
+  <view class="queren" style="background-image:url('{{uploadpath}}resource/{{res.tuan}}');background-size:100% 100%;" bindtap="queren" id='{{activitydetail.money}}'>立即报名</view>
+</view>
