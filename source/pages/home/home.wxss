@@ -23,6 +23,9 @@
   z-index: 5;
   /* background: #ccc; */
 }
+.margin-25 {
+  margin: 30rpx 36rpx;
+}
 
 .xiala{
   width: 130rpx;
@@ -132,4 +135,8 @@
   color:#0D0D0D;
   padding:6rpx 10rpx 4rpx;
   margin-right:20rpx;
+}
+.typew {
+  width: 20%;
+  margin-bottom:50rpx;
 }

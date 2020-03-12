@@ -15,9 +15,11 @@
 .tab-item {
   /* margin: 0 48rpx; */
   display: inline-block;
+  width: 15%;
   /* padding:10rpx 30rpx 10rpx 20rpx; */
-  margin:0 30rpx;
+  /* margin:0 5rpx; */
   /* border-radius:20rpx; */
+  text-align: right;
 }
 .tab-h {
   height: 120rpx;
@@ -27,6 +29,7 @@
   /* line-height: 90rpx; */
   white-space: nowrap;
   z-index: 99;
+  margin-left: 10rpx;
 }
 .imgs {
   max-width: 60rpx;

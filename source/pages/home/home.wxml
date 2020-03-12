@@ -33,13 +33,16 @@
 </swiper>
 
 <!-- 分类 -->
-<view style="padding:0 50rpx;">
-  <view class="flex-row flex-wrap">
-    <view class="flex-row flex-column" style="margin:0 27rpx 50rpx;" wx:for='{{typeslist}}' wx:key='k' wx:for-index='idx' bindtap="todetails" data-diwei="{{item.lujing}}">
+<view style="padding: 0 44rpx 0 45rpx;">
+  <view class="flex-row flex-center flex-wrap ">
+  
+    <view class="flex-row flex-column typew"   wx:for='{{typeslist}}' wx:key='k' wx:for-index='idx' bindtap="todetails" data-diwei="{{item.lujing}}">
       <image src='{{uploadpath}}types/{{item.imgs}}' style='width:64rpx;height:64rpx;'></image>
       <view style="font-size:18rpx;color:#3F3F3F;margin-top:10rpx;">{{item.name}}</view>
     </view>
+
   </view>
+
 </view>
 <view style="height:10rpx;"></view>
 <!-- 头条资讯 -->
@@ -61,7 +64,7 @@
       <swiper-item wx:for='{{zixunlist}}' wx:key='k'>
         <view class=" flex-row flex-center">
           <view style='width:10rpx;height:10rpx;background:#56AAEF;border-radius: 50%;margin-right:10rpx'></view>
-          <view class="h6 chaochu" style="width:380rpx;">{{item.name}}</view>
+          <view class="h6 chaochu" style="width:383rpx;">{{item.name}}</view>
         </view>
       </swiper-item>
     </swiper>
