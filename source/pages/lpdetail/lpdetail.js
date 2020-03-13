@@ -99,18 +99,27 @@ class Content extends AppBase {
   }
   hua(e){
     console.log(e);
-    var cur = e.currentTarget.id;
-    if (cur=='A'){
-      var len = 1249;
-    } else if (cur=='B'){
-      var len = 1249;
-    }else if(cur=='C'){
-      var len = 1082;
-    }
-    wx.pageScrollTo({
-      scrollTop: len,
-      duration: 300,
-    })
+    var cur = e.currentTarget.dataset.id;
+    var query = wx.createSelectorQuery().in(this);
+    var that = this;
+    console.log(query);
+    query.select("#" + cur).boundingClientRect();
+    query.selectViewport().scrollOffset()
+    query.exec((res) => {
+      console.log(res)
+      for (var i = 0; i < res.length; i++) {
+        if (res[i] != null) {
+          if (cur == res[i].id) {
+            wx.pageScrollTo({
+              scrollTop: res[i].top,
+              duration: 300,
+            })
+          }
+        }
+
+      }
+
+    }); 
   }
   douyou(){
     var all = this.Base.getMyData().all;

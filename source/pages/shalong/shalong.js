@@ -17,13 +17,15 @@ class Content extends AppBase {
     var that = this;
     // this.getlunbo();
     // this.getjinqi();
-    this.getinfo();
+    // this.getinfo();
     var api = new ActivityApi;
     api.typedetail({ id: this.Base.options.id }, (typedetail) => {
       var atlunbo = typedetail.lunbo;
-      var shalongac = typedetail.recentac;
+      var zhuanjiaac = typedetail.recentac;
+      var zhuanjia = typedetail.huigu;
+      var zhibo = typedetail.zhibo
       this.Base.setMyData({
-        atlunbo, shalongac
+        atlunbo, zhuanjiaac, zhuanjia, zhibo
       })
     })
   }

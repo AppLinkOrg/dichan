@@ -50,22 +50,22 @@
 
 <view class="flex-row flex-center">
   <view class="flex-1"></view>
-  <view class="flex-row flex-column" bindtap="hua" id='A'>
+  <view class="flex-row flex-column flex-3" bindtap="hua" data-id='A'>
     <image src="{{uploadpath}}resource/{{res.cepin}}" style="width:54rpx;height:66rpx;"></image>
     <view style="font-size:18rpx;color:#3F3F3F;margin-top:18rpx;">楼盘测评报告</view>
   </view>
-  <view style="width:48rpx;"></view>
-  <view class="flex-row flex-column" bindtap="hua" id='B'>
+  <!-- <view style="width:48rpx;"></view> -->
+  <view class="flex-row flex-column flex-3" bindtap="hua" data-id='B'>
     <image src="{{uploadpath}}resource/{{res.zhuanjia}}" style="width:58rpx;height:64rpx;"></image>
     <view style="font-size:18rpx;color:#3F3F3F;margin-top:22rpx;">楼盘专家测评</view>
   </view>
-  <view style="width:48rpx;"></view>
-  <view class="flex-row flex-column" bindtap="hua" id='C'>
+  <!-- <view style="width:48rpx;"></view> -->
+  <view class="flex-row flex-column flex-3" bindtap="hua" data-id='C'>
     <image src="{{uploadpath}}resource/{{res.shipin}}" style="width:58rpx;height:54rpx;"></image>
     <view style="font-size:18rpx;color:#3F3F3F;margin-top:30rpx;">楼盘视频展示</view>
   </view>
-  <view style="width:48rpx;"></view>
-  <view class="flex-row flex-column">
+  <!-- <view style="width:48rpx;"></view> -->
+  <view class="flex-row flex-column flex-3">
     <image src="{{uploadpath}}resource/{{res.vr}}" style="width:62rpx;height:44rpx;"></image>
     <view class="h6 txt-bold" style="color:#3EABFF;">VR</view>
     <view style="font-size:18rpx;color:#3F3F3F;margin-top:10rpx;">VR看房</view>
@@ -124,7 +124,7 @@
 
 <!-- 楼盘视频展示 -->
 <view style="height:40rpx;"></view>
-<view>
+<view id='C'>
   <view class="flex-row flex-center" style="background-image:url('{{uploadpath}}resource/{{res.lantiao}}');width:100vw;height:84rpx;background-size:100% 100%;">
     <view class="txt-bold" style="margin-left:54rpx;font-size:42rpx;color:#3089CE;margin-right:20rpx;">楼盘视频展示</view>
     <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>
@@ -141,7 +141,7 @@
 
 <!-- 楼盘测评报告 -->
 <view style="height:40rpx;"></view>
-<view>
+<view id='A'>
   <view class="flex-row flex-center" style="background-image:url('{{uploadpath}}resource/{{res.lantiao}}');width:100vw;height:84rpx;background-size:100% 100%;">
     <view class="txt-bold" style="margin-left:54rpx;font-size:42rpx;color:#3089CE;margin-right:20rpx;">楼盘测评报告</view>
     <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>
@@ -159,7 +159,7 @@
 
 <!-- 楼盘测评报告 -->
 <view style="height:40rpx;"></view>
-<view>
+<view id='B'>
   <view class="flex-row flex-center" style="background-image:url('{{uploadpath}}resource/{{res.lantiao}}');width:100vw;height:84rpx;background-size:100% 100%;">
     <view class="txt-bold" style="margin-left:54rpx;font-size:42rpx;color:#3089CE;margin-right:20rpx;">楼盘专家点评</view>
     <image src="{{uploadpath}}resource/{{res.dian}}" style="width:54rpx;height:34rpx;"></image>

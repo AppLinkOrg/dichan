@@ -21,3 +21,21 @@
   text-align: center;
   line-height: 46rpx;
 }
+.iimg {
+  width: 654rpx;
+  height: 326rpx;
+}
+.ac {
+  font-size: 20rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}
+
+.bm2 {
+  /* width:130rpx;
+  height:66rpx; */
+  font-size: 18rpx;
+  color: #666666;
+  text-align: center;
+  /* line-height: 55rpx; */
+}

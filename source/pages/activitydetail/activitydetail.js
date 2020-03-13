@@ -11,7 +11,7 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
-    // options.id=2;
+    options.id=2;
     super.onLoad(options);
   }
   onMyShow() {
@@ -26,7 +26,7 @@ class Content extends AppBase {
   }
   setPageTitle(instinfo) {
     wx.setNavigationBarTitle({
-      title: '详情',
+      title: '活动详情',
     })
   }
   baomin(){

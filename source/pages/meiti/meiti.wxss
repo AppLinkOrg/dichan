@@ -7,3 +7,36 @@
   /* position: relative;
   top: -198rpx; */
 }
+
+.sj {
+  font-size: 22rpx;
+  color: #999999;
+}
+.bm {
+  width: 106rpx;
+  height: 42rpx;
+  font-size: 18rpx;
+  color: #ffffff;
+  background: #2EAFEB;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.iimg {
+  width: 654rpx;
+  height: 326rpx;
+}
+.ac {
+  font-size: 20rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}
+
+.bm2 {
+  /* width:130rpx;
+  height:66rpx; */
+  font-size: 18rpx;
+  color: #666666;
+  text-align: center;
+  /* line-height: 55rpx; */
+}

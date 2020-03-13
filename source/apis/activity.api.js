@@ -297,6 +297,38 @@ export class ActivityApi{
         })
     }
 
+    typedetail(json, callback, showLoading = true) {
+
+        if (showLoading)
+            ApiConfig.ShowLoading();
+
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'activity/typedetail',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
+
     types(json, callback, showLoading = true) {
 
         if (showLoading)
@@ -425,7 +457,7 @@ export class ActivityApi{
         })
     }
 
-    typedetail(json, callback, showLoading = true) {
+    zhibotype(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -434,7 +466,7 @@ export class ActivityApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'activity/typedetail',
+            url: ApiConfig.GetApiUrl() + 'activity/zhibotype',
             data: json,
             method: 'POST',
             dataType: 'json',

@@ -191,6 +191,9 @@ overflow:hidden;               /* 内容超出宽度时隐藏超出部分的内�
 .f-32{
   font-size: 32rpx !important;
 }
+.f-30{
+  font-size: 30rpx !important;
+}
 .f-22{
   font-size: 22rpx !important;
 }
@@ -427,6 +430,10 @@ button[disabled][type=primary] {
 .radius-5{
   border-radius: 5%;
 }
+.icon-5{
+  width: 10rpx;
+  height: 10rpx;
+}
 .icon-10{
   width: 20rpx;
   height: 20rpx;
@@ -438,6 +445,10 @@ button[disabled][type=primary] {
 .icon-17{
   width: 35rpx;
   height: 35rpx;
+}
+.icon-14{
+  width: 28rpx;
+  height: 28rpx;
 }
 .icon{
   width: 40rpx;

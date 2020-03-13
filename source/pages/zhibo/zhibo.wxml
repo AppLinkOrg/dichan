@@ -8,11 +8,89 @@
 </swiper>
 
 
-<view style="padding:0 32rpx 0 28rpx;" wx:for='{{zhibo}}' wx:key='k'>
+<view class="flex-row flex-center" style="padding:0 20rpx 0 50rpx;">
+  <view wx:for='{{zhibotype}}' wx:key='k' class="ty f-22" style="background-image:url('{{uploadpath}}zhibo/{{item.bgimg}}');background-size:100% 100%;">{{item.name}}</view>
+</view>
+
+
+<view wx:for='{{zhibo}}' wx:key='k'>
+  <view style="width:100vw;height:6rpx;background:#EEEEEE;margin:30rpx 0; "></view>
+  <view class="sp f-36">视频看房</view>
+
+  <view class="padding-left-60-right" wx:for='{{item.kanfan}}' wx:key='k' >
+    <view style='position:relative;'>
+      <image src="{{uploadpath}}zhibo/{{item.img}}" class="imgs"></image>
+      <view class="shj">{{item.shijian}}</view>
+    </view>
+    <view style="height:22rpx;"></view>
+    <view class="kf">地址：{{item.dizhi}}</view>
+    <view style="height:12rpx;"></view>
+    <view class="flex-row flex-center">
+      <view class="kf">户型：{{item.huxin}}</view>
+      <view class="flex-1"></view>
+      <view class="kf">查看更多></view>
+    </view>
+  </view>
+
+  <view style="width:100vw;height:6rpx;background:#EEEEEE;margin:30rpx 0; "></view>
+
+  <view class="sp f-36">主播预告</view>
+
+  <view class="padding-left-60-right" wx:for='{{item.yugao}}' wx:key='k' >
+    <view style='position:relative;'>
+      <image src="{{uploadpath}}zhibo/{{item.img}}" class="imgs"></image>
+      <view class="shj">{{item.shijian}}</view>
+    </view>
+
+    <view style="height:22rpx;"></view>
+    <view class="kf">预告内容：{{item.name}}</view>
+    <view style="height:12rpx;"></view>
+    <view class="flex-row flex-center">
+      <view class="kf">预告户型：{{item.huxin}}</view>
+      <view class="flex-1"></view>
+      <view class="kf">查看更多></view>
+    </view>
+  </view>
+
+
+
+  <view style="width:100vw;height:6rpx;background:#EEEEEE;margin:30rpx 0; "></view>
+
+  <view class="sp f-36">直播回顾</view>
+
+  <view wx:for='{{item.huigu}}' class="padding-left-60-right" wx:key='k' >
+    <view style="height:30rpx;"></view>
+    <view class="flex-row flex-center">
+      <view style="width:406rpx;">
+        <view class="h5" style="color:#666666;">{{item.name}}</view>
+        <view style="height:20rpx;"></view>
+        <view class="flex-row flex-center">
+          <view class="sj">{{item.shijian}}</view>
+          <view class="flex-1"></view>
+          <view class="bm">点击观看</view>
+        </view>
+      </view>
+      <view class="flex-1"></view>
+      <image src="{{uploadpath}}zhibo/{{item.img}}" style="width:192rpx;height:150rpx;"></image>
+    </view>
+  
+  </view>
+
+</view>
+
+<view style="height:100rpx;"></view>
+<view class="flex-row flex-column">
+  <image src="{{uploadpath}}resource/{{res.dixian}}" style="width:636rpx;height:20rpx;"></image>
+</view>
+<view style="height:40rpx;"></view>
+
+
+
+
+<!-- <view style="padding:0 32rpx 0 28rpx;" wx:for='{{zhibo}}' wx:key='k'>
   <view wx:if='{{item.kf=="是"}}'>
     <view class="f-36" style="color:#333333;">视频看房</view>
     <view style="height:24rpx;"></view>
-    <!-- <video wx:if='{{item.shipin!=""}}' src="{{uploadpath}}zhibo/{{item.shipin}}" style="width:686rpx;height:268rpx;"></video> -->
     <image src="{{uploadpath}}zhibo/{{item.shipin}}" style="width:686rpx;height:268rpx;"></image>
     <view style="height:52rpx;"></view>
   </view>
@@ -20,7 +98,6 @@
   <view wx:if='{{item.zb=="是"}}'>
     <view class="f-36" style="color:#333333;">主播预告</view>
     <view style="height:24rpx;"></view>
-    <!-- <video wx:if='{{item.yugao!=""}}' src="{{uploadpath}}zhibo/{{item.yugao}}" style="width:686rpx;height:268rpx;"></video> -->
     <image src="{{uploadpath}}zhibo/{{item.yugao}}" style="width:686rpx;height:268rpx;"></image>
     <view style="height:52rpx;"></view>
   </view>
@@ -28,7 +105,6 @@
   <view wx:if='{{item.hg=="是"}}'>
     <view class="f-36" style="color:#333333;">直播回顾</view>
     <view style="height:24rpx;"></view>
-    <!-- <video wx:if='{{item.huigu!=""}}' src="{{uploadpath}}zhibo/{{item.huigu}}" style="width:686rpx;height:268rpx;"></video> -->
     <image src="{{uploadpath}}zhibo/{{item.huigu}}" style="width:686rpx;height:268rpx;"></image>
     <view style="height:52rpx;"></view>
   </view>
@@ -55,8 +131,6 @@
   <view style='height:46rpx;'></view>
   <view wx:if='{{focus==true}}' class="flex-row flex-center send">
     <input placeholder="留言" confirm-type="send" bindconfirm="sendmsg" confirm-hold="true" focus="{{focus}}" value="{{content}}" bindinput="contFn"></input>
-    <!-- <view class="flex-1"></view> -->
-    <!-- <view bindtap="sendmsg">发送</view> -->
   </view>
 
   <view wx:for='{{msglist}}' wx:key='k'>
@@ -73,4 +147,4 @@
   </view>
 </view>
 
-<view class="mask" wx:if='{{focus==true}}' bindtap="xiaoshi"></view>
+<view class="mask" wx:if='{{focus==true}}' bindtap="xiaoshi"></view> -->

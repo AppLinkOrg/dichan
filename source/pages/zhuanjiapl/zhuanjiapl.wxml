@@ -10,52 +10,98 @@
 
 <!-- 近期活动 -->
 
-<view style='padding:0 32rpx 0 28rpx;'>
 
-  <view class="f-36" style="color:#333333;">近期活动</view>
+<view style=''>
 
-  <view wx:for='{{zhuanjiaac}}' wx:key='k'>
-    <view style="height:30rpx;"></view>
+  <view class="f-36" style="color:#333333;padding:0 32rpx 0 28rpx;">近期活动</view>
+
+  <view style="height:20rpx;"></view>
+
+  <view wx:for='{{zhuanjiaac}}' wx:key='k' style="padding:0 46rpx 0 48rpx;" bindtap="todetail" id='{{item.id}}'>
+    <image src="{{uploadpath}}zhuanjia/{{item.img}}" class="iimg"></image>
+    <view class="ac">活动主题：{{item.name}}</view>
+    <view class="ac">活动嘉宾：{{item.jiapin}}</view>
     <view class="flex-row flex-center">
-      <view style="width:406rpx;">
-        <view class="h5" style="color:#333333;">{{item.name}}</view>
-        <view style="height:20rpx;"></view>
-        <view class="flex-row flex-center">
-          <view class="sj">{{item.shijian}}</view>
-          <view class="flex-1"></view>
-          <view class="bm">我要报名</view>
-        </view>
-      </view>
+      <view class="ac">活动时间：{{item.shijian}}</view>
       <view class="flex-1"></view>
-      <image src="{{uploadpath}}zhuanjia/{{item.img}}" style="width:228rpx;height:150rpx;"></image>
+      <view class="bm2">查看更多></view>
     </view>
+    <view style="height:26rpx;"></view>
   </view>
 
+
+  <view class="f-36" style="color:#333333;padding:0 32rpx 0 28rpx;">活动直播</view>
+
+  <view style="height:26rpx;"></view>
+
+  <view wx:for='{{zhibo}}' wx:key='k' style="padding:0 46rpx 0 48rpx;" bindtap="todetail" id='{{item.id}}'>
+    <image src="{{uploadpath}}zhuanjia/{{item.img}}" class="iimg"></image>
+    <view class="ac">活动主题：{{item.name}}</view>
+    <view class="ac">活动嘉宾：{{item.jiapin}}</view>
+    <view class="flex-row flex-center">
+      <view class="ac">活动时间：{{item.shijian}}</view>
+      <view class="flex-1"></view>
+      <view class="bm2">查看更多></view>
+    </view>
+    <view style="height:26rpx;"></view>
+  </view>
+
+
+  <view style="padding:0 32rpx 0 28rpx;">
+    <view class="f-36" style="color:#333333;">活动回顾</view>
+
+    <!-- <view style="height:20rpx;"></view> -->
+
+    <view wx:for='{{zhuanjiaac}}' wx:key='k'>
+      <view style="height:30rpx;"></view>
+      <view class="flex-row flex-center">
+        <view style="width:406rpx;">
+          <view class="h5" style="color:#333333;">{{item.name}}</view>
+          <view style="height:20rpx;"></view>
+          <view class="flex-row flex-center">
+            <view class="sj">{{item.shijian}}</view>
+            <view class="flex-1"></view>
+            <view class="bm">更多详情</view>
+          </view>
+        </view>
+        <view class="flex-1"></view>
+        <image src="{{uploadpath}}zhuanjia/{{item.img}}" style="width:228rpx;height:150rpx;"></image>
+      </view>
+    </view>
+
+
+  </view>
+
+
 </view>
 
 
+<view style="height:100rpx;"></view>
+<view class="flex-row flex-column">
+<image src="{{uploadpath}}resource/{{res.dixian}}" style="width:636rpx;height:20rpx;"></image>
+</view>
 <view style="height:40rpx;"></view>
-<view style='padding:0 32rpx 0 28rpx;' wx:for='{{zhuanjia}}' wx:key='k'>
+<!-- <view style='padding:0 32rpx 0 28rpx;' wx:for='{{zhuanjia}}' wx:key='k'> -->
 
- <view wx:if='{{item.zb=="是"}}'>
-  <view class="f-36" style="color:#333333;">活动直播</view>
-  <view style="height:24rpx;"></view>
-  <image src="{{uploadpath}}zhuanjia/{{item.zhibo}}" style="width:686rpx;height:268rpx;"></image>
-  <view style="height:32rpx;"></view>
+<!-- <view wx:if='{{item.zb=="是"}}'>
+    <view class="f-36" style="color:#333333;">活动直播</view>
+    <view style="height:24rpx;"></view>
+    <image src="{{uploadpath}}zhuanjia/{{item.zhibo}}" style="width:686rpx;height:268rpx;"></image>
+    <view style="height:32rpx;"></view>
 
-</view>
- <view wx:if='{{item.hg=="是"}}'>
+  </view> -->
+<!-- <view wx:if='{{item.hg=="是"}}'>
 
- <view class="f-36" style="color:#333333;">活动回顾</view>
-  <view style="height:24rpx;"></view>
-  <image src="{{uploadpath}}zhuanjia/{{item.huigu}}" style="width:686rpx;height:268rpx;"></image>
-  <view style="height:32rpx;"></view>
-</view>
- <view wx:if='{{item.jlq=="是"}}'>
-   <view class="f-36" style="color:#333333;">活动交流群</view>
-  <view style="height:24rpx;"></view>
-  <image src="{{uploadpath}}zhuanjia/{{item.jiaoliiu}}" style="width:686rpx;height:268rpx;"></image>
-  <view style="height:32rpx;"></view>
-</view>
+    <view class="f-36" style="color:#333333;">活动回顾</view>
+    <view style="height:24rpx;"></view>
+    <image src="{{uploadpath}}zhuanjia/{{item.huigu}}" style="width:686rpx;height:268rpx;"></image>
+    <view style="height:32rpx;"></view>
+  </view>
+  <view wx:if='{{item.jlq=="是"}}'>
+    <view class="f-36" style="color:#333333;">活动交流群</view>
+    <view style="height:24rpx;"></view>
+    <image src="{{uploadpath}}zhuanjia/{{item.jiaoliiu}}" style="width:686rpx;height:268rpx;"></image>
+    <view style="height:32rpx;"></view>
+  </view> -->
 
-</view>
+<!-- </view> -->

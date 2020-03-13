@@ -2,16 +2,21 @@
   background: #4EB1FF;
 }
 .inp {
-  width: 600rpx;
+  width: 562rpx;
   height: 60rpx;
   /* border: 1rpx solid #cccccc; */
-  border-radius: 20rpx;
+  border-radius: 60rpx;
   background: #ffffff;
 }
 .cc {
-  background: #3E8FCE;
+  width: 100rpx;
+  height: 44rpx;
+  /* background: #3E8FCE; */
   padding: 5rpx 15rpx;
-  border-radius: 20rpx;
+  /* border-radius: 20rpx; */
+}
+.margin-left-16 {
+  margin-left: 16rpx;
 }
 
 .mask {

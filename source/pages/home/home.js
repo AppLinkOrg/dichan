@@ -219,39 +219,65 @@ class Content extends AppBase {
     var pqlist = this.Base.getMyData().loupanlists;
     var lujing = e.currentTarget.dataset.diwei;
 
-    if (pqlist[1].loulist.length>3){
-      var blen = 1391;
-    }else {
-      var blen = 1141;
-    }
-    if (pqlist[2].loulist.length > 3) {
-      var clen = 1750;
-    } else {
-      var clen = 1391 + (118 * pqlist[2].loulist.length);
-    }
-    console.log(clen,'pp')
-    console.log(e);
-    
-    if(lujing=='a'){
-     wx.pageScrollTo({
-       scrollTop: 661,
-       duration: 300
-     })
-    } else if (lujing == 'b') {
-      wx.pageScrollTo({
-        scrollTop: blen,
-        duration: 300,
-      })
-    } else if (lujing == 'c') {
-      wx.pageScrollTo({
-        scrollTop: clen,
-        duration: 300,
-      })
-    }else if(lujing.indexOf('activity')>-1) {
+    var query = wx.createSelectorQuery().in(this);
+    var that = this;
+    console.log(query);
+    query.select("#" + lujing).boundingClientRect();
+    query.selectViewport().scrollOffset()
+    query.exec((res) => {
+      console.log(res)
+      for(var i=0;i<res.length;i++){
+        if(res[i]!=null){
+          if (lujing == res[i].id) {
+            wx.pageScrollTo({
+              scrollTop: res[i].top,
+              duration: 300,
+            })
+          }
+        }
+        
+      }
+     
+    }); 
+
+
+    if (lujing.indexOf('activity') > -1) {
       wx.switchTab({
         url: '/' + lujing,
       })
     }
+    // return;
+
+    // if (pqlist[1].loulist.length>3){
+    //   var blen = 1391;
+    // }else {
+    //   var blen = 1141;
+    // }
+    // if (pqlist[2].loulist.length > 3) {
+    //   var clen = 1750;
+    // } else {
+    //   var clen = 1391 + (118 * pqlist[2].loulist.length);
+    // }
+    // console.log(clen,'pp')
+    // console.log(e);
+    
+    // if(lujing=='a'){
+    //  wx.pageScrollTo({
+    //    scrollTop: 661,
+    //    duration: 300
+    //  })
+    // } else if (lujing == 'b') {
+    //   wx.pageScrollTo({
+    //     scrollTop: blen,
+    //     duration: 300,
+    //   })
+    // } else if (lujing == 'c') {
+    //   wx.pageScrollTo({
+    //     scrollTop: clen,
+    //     duration: 300,
+    //   })
+    // }else 
+    
   }
   xiangqin(e){
     console.log(e);

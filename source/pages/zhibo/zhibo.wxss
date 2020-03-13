@@ -23,3 +23,47 @@
   left: 0;
   z-index: 5;
 }
+.ty {
+  margin-right: 36rpx;
+  padding: 10rpx 20rpx;
+  color: #ffffff;
+}
+.sp {
+    color: #333333;
+    padding-left: 32rpx;
+    margin-bottom: 18rpx;
+}
+.imgs {
+  width: 630rpx;
+  height: 268rpx;
+}
+.padding-left-60-right {
+  padding: 0 60rpx;
+}
+.kf {
+  font-size: 19rpx;
+  color: #666666;
+}
+.shj {
+    font-size: 16rpx;
+    position: absolute;
+    right: 6rpx;
+    bottom: 8rpx;
+    color: #ffffff;
+}
+
+.sj {
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.bm {
+  width: 106rpx;
+  height: 42rpx;
+  font-size: 18rpx;
+  color: #ffffff;
+  background: #2EAFEB;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 35rpx;
+}
