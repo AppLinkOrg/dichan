@@ -137,6 +137,13 @@
 					"id": -1,
 					"name": "pages/actbaomin/actbaomin",
 					"pathName": "pages/actbaomin/actbaomin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shipin/shipin",
+					"pathName": "pages/shipin/shipin",
 					"scene": null
 				}
 			]

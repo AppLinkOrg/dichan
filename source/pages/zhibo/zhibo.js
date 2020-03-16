@@ -106,6 +106,13 @@ class Content extends AppBase {
       focus:false
     })
   }
+  watchmore(e){
+    console.log(e);
+    var id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/shipin/shipin?id='+id,
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -118,4 +125,5 @@ body.liuyan = content.liuyan;
 body.sendmsg = content.sendmsg;
 body.contFn = content.contFn;
 body.xiaoshi = content.xiaoshi;
+body.watchmore = content.watchmore;
 Page(body)

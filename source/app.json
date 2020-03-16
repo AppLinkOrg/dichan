@@ -19,7 +19,8 @@
     "pages/shalong/shalong",
     "pages/meiti/meiti",
     "pages/activitydetail/activitydetail",
-    "pages/actbaomin/actbaomin"
+    "pages/actbaomin/actbaomin",
+    "pages/shipin/shipin"
   ],
   "permission": {
     "scope.userLocation": {

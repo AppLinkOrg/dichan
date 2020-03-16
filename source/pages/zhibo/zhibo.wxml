@@ -17,7 +17,7 @@
   <view style="width:100vw;height:6rpx;background:#EEEEEE;margin:30rpx 0; "></view>
   <view class="sp f-36">视频看房</view>
 
-  <view class="padding-left-60-right" wx:for='{{item.kanfan}}' wx:key='k' >
+  <view class="padding-left-60-right" wx:for='{{item.kanfan}}' wx:key='k'>
     <view style='position:relative;'>
       <image src="{{uploadpath}}zhibo/{{item.img}}" class="imgs"></image>
       <view class="shj">{{item.shijian}}</view>
@@ -28,7 +28,7 @@
     <view class="flex-row flex-center">
       <view class="kf">户型：{{item.huxin}}</view>
       <view class="flex-1"></view>
-      <view class="kf">查看更多></view>
+      <view class="kf" bindtap="watchmore" id='{{item.id}}'>查看更多></view>
     </view>
   </view>
 
@@ -36,7 +36,7 @@
 
   <view class="sp f-36">主播预告</view>
 
-  <view class="padding-left-60-right" wx:for='{{item.yugao}}' wx:key='k' >
+  <view class="padding-left-60-right" wx:for='{{item.yugao}}' wx:key='k'>
     <view style='position:relative;'>
       <image src="{{uploadpath}}zhibo/{{item.img}}" class="imgs"></image>
       <view class="shj">{{item.shijian}}</view>
@@ -58,7 +58,7 @@
 
   <view class="sp f-36">直播回顾</view>
 
-  <view wx:for='{{item.huigu}}' class="padding-left-60-right" wx:key='k' >
+  <view wx:for='{{item.huigu}}' class="padding-left-60-right" wx:key='k'>
     <view style="height:30rpx;"></view>
     <view class="flex-row flex-center">
       <view style="width:406rpx;">
@@ -73,7 +73,7 @@
       <view class="flex-1"></view>
       <image src="{{uploadpath}}zhibo/{{item.img}}" style="width:192rpx;height:150rpx;"></image>
     </view>
-  
+
   </view>
 
 </view>
