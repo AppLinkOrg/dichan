@@ -1,2 +1,66 @@
-<!--pages/shipin/shipin.wxml-->
-<text>pages/shipin/shipin.wxml</text>
+<view class="flex-row flex-center margin-top-30 margin-left-20">
+  <image src="{{uploadpath}}zhibo/{{ship.touxiang}}" style="width:73rpx;height:73rpx;"></image>
+  <view class="f-30 margin-left-10" style="color:#666666;">{{ship.people}} </view>
+  <image src="{{uploadpath}}resource/{{res.jinp}}" style="width:23rpx;height:33rpx;margin:0 2rpx 0 6rpx;"></image>
+  <view class="h6" style="color:#F9A718"> {{ship.zhichen}}</view>
+</view>
+<view style="height:34rpx;"></view>
+
+<view class="f-30 margin-bottom-20" style="color:#333333;margin-left:28rpx;">视频名称</view>
+<view style="margin-left:42rpx;">
+  <video wx:if='{{ship.video!=""}}' src="{{uploadpath}}zhibo/{{ship.video}}" style="width:663rpx;height:326rpx;"></video>
+  <image wx:if='{{ship.video==""}}' src="{{uploadpath}}zhibo/{{ship.img}}" style="width:663rpx;height:326rpx;"></image>
+
+  <view class="f-26" style="color:#999999;margin-top:32rpx;">{{ship.shijian}}</view>
+</view>
+
+
+<view class="flex-row flex-center" style='padding:44rpx 26rpx 48rpx 42rpx;'>
+  <image src="{{uploadpath}}loupan/{{ship.lou_img}}" style="width:202rpx;height:192rpx;"></image>
+  <view style="margin-left:18rpx;width:456rpx;">
+    <view class="h4-5 " style="color:#333333;">{{ship.lou_name}}</view>
+    <view style="height:32rpx;"></view>
+    <view class="" style="font-size:26rpx;color:#999999;">{{ship.city_name}}</view>
+    <view style="font-size:26rpx;color:#999999;margin:10rpx 0;">{{ship.lou_xinxi}}</view>
+
+
+    <view class="flex-row flex-bottom">
+      <view class="h4-5" style="color:#ED4949">{{ship.lou_prices}}元/㎡</view>
+      <view class="flex-1"></view>
+      <view class='gen'>更多详情</view>
+    </view>
+  </view>
+</view>
+
+
+<view style="height:60rpx;"></view>
+
+<!-- 评论区 -->
+<view style="padding:0 30rpx 0 32rpx;">
+
+  <view class="flex-row flex-center">
+    <view class="f-36" style="color:#333333;">评论区</view>
+    <view class="flex-1"></view>
+    <view class="h6" style="color:#4782EE;" bindtap="liuyan">我要留言</view>
+  </view>
+
+  <view style='height:46rpx;'></view>
+  <view wx:if='{{focus==true}}' class="flex-row flex-center send">
+    <input placeholder="留言" confirm-type="send" bindconfirm="sendmsg" confirm-hold="true" focus="{{focus}}" value="{{content}}" bindinput="contFn"></input>
+  </view>
+
+  <view wx:for='{{msglist}}' wx:key='k'>
+    <view class="flex-row">
+      <image class="radius-50" src="{{item.member_avatarUrl}}" style="width:68rpx;height:68rpx;"></image>
+      <view style="width:16rpx;"></view>
+      <view>
+        <view style="color:#666666;font-size:22rpx;">{{item.member_nickName}}</view>
+        <view style="color:#999999;font-size:18rpx; margin:10rpx 0 18rpx;">{{item.shijian_dateformat}}</view>
+        <view class="h7" style="color:#333333;">{{item.content}}</view>
+      </view>
+    </view>
+    <view style="height:40rpx;"></view>
+  </view>
+</view>
+
+<view class="mask" wx:if='{{focus==true}}' bindtap="xiaoshi"></view>

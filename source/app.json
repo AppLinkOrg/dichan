@@ -32,6 +32,7 @@
     "enablePullDownRefresh": true,
     "navigationBarBackgroundColor": "#4EB1FF",
     "navigationBarTextStyle": "white"
+    
   },
    "tabBar": {
     "color": "#bfbfbf",

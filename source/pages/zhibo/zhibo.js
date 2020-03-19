@@ -109,8 +109,9 @@ class Content extends AppBase {
   watchmore(e){
     console.log(e);
     var id = e.currentTarget.id;
+    var cur = e.currentTarget.dataset.current;
     wx.navigateTo({
-      url: '/pages/shipin/shipin?id='+id,
+      url: '/pages/shipin/shipin?id='+id + '&type='+cur,
     })
   }
 }

@@ -9,6 +9,9 @@ App({
         this.globalData.Custom = custom;
         this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
       }
+    });
+    wx.hideTabBar({
+      
     })
 
   },
@@ -16,5 +19,6 @@ App({
     isPlayMusic: false,
     doubanBase: "http://t.yushu.im",
     navHeight: 0
-  }
+  },
+ 
 })

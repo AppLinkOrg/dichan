@@ -28,7 +28,7 @@
     <view class="flex-row flex-center">
       <view class="kf">户型：{{item.huxin}}</view>
       <view class="flex-1"></view>
-      <view class="kf" bindtap="watchmore" id='{{item.id}}'>查看更多></view>
+      <view class="kf" bindtap="watchmore" data-current="kan" id='{{item.id}}'>查看更多></view>
     </view>
   </view>
 
@@ -48,7 +48,7 @@
     <view class="flex-row flex-center">
       <view class="kf">预告户型：{{item.huxin}}</view>
       <view class="flex-1"></view>
-      <view class="kf">查看更多></view>
+      <view class="kf" bindtap="watchmore" data-current="yu" id='{{item.id}}'>查看更多></view>
     </view>
   </view>
 
