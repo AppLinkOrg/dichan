@@ -293,7 +293,7 @@ export class AppBase {
     var memberapi = new MemberApi();
     var that = this;
     memberapi.info({}, (info) => {
-      if (info == null && this.Base.needauth == true) {
+      if (info == null && this.Base.needauth==true) {
       // if (info == null ) {
         wx.navigateTo({
           url: '/pages/auth/auth',

@@ -105,7 +105,7 @@
   </scroll-view>
 
 
-  <view class="flex-row flex-wrap" style="padding-left:44rpx;">
+  <view class="flex-row flex-wrap margin-top-20" style="padding-left:44rpx;">
     <view wx:for='{{loupanlists[0].loulist}}' wx:if='{{idx<4}}' wx:for-index='idx' wx:key='k' style="width: 316rpx;height: 484rpx;margin:0 28rpx 48rpx 0;border:1rpx solid #cccccc;" bindtap="xiangqin" id="{{item.id}}">
       <image src='{{uploadpath}}loupan/{{item.img}}' style='width:100%;height:318rpx;'></image>
       <view style='padding:0 10rpx;'>
@@ -201,7 +201,6 @@
 </view>
 
 <view style='height:200rpx;'></view>
-
 <!-- 回到顶部 -->
 <image src="{{uploadpath}}resource/{{res.top}}" bindtap="huidao" class='ding'></image>
 <custom-tab-bar></custom-tab-bar>

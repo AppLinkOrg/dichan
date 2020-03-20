@@ -27,7 +27,7 @@
     <view class="flex-row flex-bottom">
       <view class="h4-5" style="color:#ED4949">{{ship.lou_prices}}元/㎡</view>
       <view class="flex-1"></view>
-      <view class='gen'>更多详情</view>
+      <view class='gen' bindtap="todetail" id='{{ship.loupan_id}}'>更多详情</view>
     </view>
   </view>
 </view>
@@ -63,4 +63,26 @@
   </view>
 </view>
 
+<view style="height:110rpx;"></view>
+
 <view class="mask" wx:if='{{focus==true}}' bindtap="xiaoshi"></view>
+
+<view class="flex-row flex-center pop">
+  <view class="flex-1 text-center">
+    <image src="{{uploadpath}}resource/{{res.zixun}}" style="width:60rpx;height:50rpx;"></image>
+    <view class=" h6" style="color:#333333;">咨询</view>
+  </view>
+    <view class="flex-1 text-center">
+    <image src="{{uploadpath}}resource/{{res.sc}}" style="width:60rpx;height:62rpx;"></image>
+    <view class=" h6" style="color:#333333;">收藏</view>
+  </view>
+    <view class="flex-1 text-center">
+    <image src="{{uploadpath}}resource/{{res.zf}}" style="width:60rpx;height:62rpx;"></image>
+    <view class=" h6" style="color:#333333;">转发</view>
+  </view>
+
+  <view class="flex-3 flex-row flex-column">
+    <view class="zx h6">电话咨询</view>
+  </view>
+
+</view>

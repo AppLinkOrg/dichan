@@ -29,6 +29,7 @@ class Content extends AppBase {
       },
       
     })
+   
   }
   onMyShow() {
     var today = new Date();

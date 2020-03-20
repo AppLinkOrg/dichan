@@ -68,6 +68,12 @@ class Content extends AppBase {
       }
     })
   }
+  todetail(e){
+    var id = e.currentTarget.id;
+    wx.navigateTo({
+      url: '/pages/lpdetail/lpdetail?id='+id,
+    })
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
@@ -76,4 +82,5 @@ body.onMyShow = content.onMyShow;
 body.getliuyan = content.getliuyan;
 body.liuyan = content.liuyan;
 body.sendmsg = content.sendmsg;
+body.todetail = content.todetail;
 Page(body)
